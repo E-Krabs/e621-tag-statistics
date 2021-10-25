@@ -6,16 +6,16 @@ import json
 url = "https://e621.net/posts.json?limit=1000"
 e621_agent = {
    'User-Agent': 'TagData (by EKrabs)',
-   'login': 'EKrabs',
-   'api_key': '7yqTWqrn1CLk4nG6q4J1W6s4'
+   'login': '',
+   'api_key': ''
 }
 
-login = 'EKrabs'
-api_key = '7yqTWqrn1CLk4nG6q4J1W6s4'
+login = ''
+api_key = ''
 
 max_id = 2299865 #2990557
 seen = []
-directory = 'C:/Scripts/Python/[adjective][species]/'
+directory = 'C:/'
 run = 0
 with open('{}e621-total-m10-d24-y21.json'.format(directory), 'a') as f:
     #with open('{}seen.json'.format(directory), 'w') as s:
