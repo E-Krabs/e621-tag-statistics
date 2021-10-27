@@ -7,5 +7,4 @@ Search results are displayed as they become available. Double clicking a found p
 GigaEdit can also generate letter frequencies, repetition positions, and word positions.
 
 Ali Adams
-God > infinity
 www.heliwave.com
