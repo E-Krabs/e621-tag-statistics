@@ -23,5 +23,24 @@ with open('{}tag-out.json'.format(directory), 'r') as f:
     lst = word_counter.most_common(30)
     df = pd.DataFrame(lst, columns = ['Word', 'Count'])
     df.plot.bar(x='Word',y='Count')
-    plt.title('Tags (957,625)')
+    plt.title('General (957,625)')
+    plt.show()
+
+    wordcount = {}
+    for item in data:
+        species = item['species']
+        for words in species:
+            word = words
+            if word not in wordcount:
+                wordcount[word] = 1
+            else:
+                wordcount[word] += 1# Print most common word
+    word_counter = collections.Counter(wordcount)
+    for word, count in word_counter.most_common(30):
+        print(word, ": ", count)# Close the file
+
+    lst = word_counter.most_common(30)
+    df = pd.DataFrame(lst, columns = ['Word', 'Count'])
+    df.plot.bar(x='Word',y='Count')
+    plt.title('Species (957,625)')
     plt.show()
