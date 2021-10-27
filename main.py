@@ -5,13 +5,13 @@ import json
 
 url = "https://e621.net/posts.json?limit=1000"
 e621_agent = {
-   'User-Agent': 'TagData (by EKrabs)',
-   'login': 'EKrabs',
-   'api_key': '7yqTWqrn1CLk4nG6q4J1W6s4'
+   'User-Agent': '',
+   'login': '',
+   'api_key': ''
 }
 
-login = 'EKrabs'
-api_key = '7yqTWqrn1CLk4nG6q4J1W6s4'
+login = ''
+api_key = ''
 
 max_id = 2992268 #2992268
 seen = []
