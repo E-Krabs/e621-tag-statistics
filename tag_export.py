@@ -9,7 +9,7 @@ with open('{}e621-total-2021-10-25-a.json'.format(directory), 'r') as f:
 
 with open('{}tag-out.json'.format(directory), 'w') as o:
     o.write('[')
-    run = 1
+    run = 0
     for item in data:
         tags = item['tags']
         o.write(json.dumps(tags))
