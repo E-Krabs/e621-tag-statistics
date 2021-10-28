@@ -7,32 +7,32 @@ directory = 'C:/Scripts/Python/[adjective][species]/'
 with open('{}date-out.json'.format(directory)) as f:
 	data = f.read().split(',')
 
-	stopwords = ['2021']
 	yearcount = {}
-	years = []
-	posts = []
 	for item in data:
 		year = item.split('-')[0][1:]
-		if year not in yearcount and year not in stopwords:
+		if year not in yearcount:
 			yearcount[year] = 1
 		else:
 			yearcount[year] += 1
 	word_counter = collections.Counter(yearcount)
-	with open('{}year_count.txt'.format(directory), 'w', encoding='utf-8') as o:
-		#for year, count in word_counter.most_common():
-		for year, count in word_counter:
-			print(year, count)
-			year_min = 
-			year_max = 
-			
-			#o.write('{0}: {1}\n'.format(year, count))
-			#years.append(year)
-			#posts.append(count)
+	with open('{}posts_per_year_count.txt'.format(directory), 'w', encoding='utf-8') as o:
+		for year, count in word_counter.most_common():
+			o.write('{0}: {1}\n'.format(year, count))
 
-	plt.plot(years, posts, color='red', label='Count')
-	plt.title('Posted Per Year ({0}, ' - ', {1})'.format(year_min, year_max)
-	plt.xlabel('Year')
-	plt.ylabel('Posts')
-	plt.grid()
-	plt.legend()
-	plt.show()
+	print('Plotting Posts Per Year...')
+	lst = word_counter.most_common(5)
+	df = pd.DataFrame(lst, columns = ['Year', 'Posts'])
+	df = df.sort_values(by=['Year'], ascending=True)
+	df.plot(x='Year', y='Posts', color='red')
+	plt.title('Posted Per Year (2008-2021)')
+	plt.savefig('{}posts_per_year_plot.png'.format(directory), dpi=300, bbox_inches='tight') #transparent=True
+
+	print('Plotting Total Posts...')
+	lst = word_counter.most_common(5)
+	df = pd.DataFrame(lst, columns = ['Year', 'Posts'])
+	df = df.sort_values(by=['Year'], ascending=True)
+	
+	df.plot(x='Year', y='Posts', color='red')
+	plt.title('Posted Per Year (2008-2021)')
+	plt.savefig('{}posts_per_year_plot.png'.format(directory), dpi=300, bbox_inches='tight') #transparent=True
+
