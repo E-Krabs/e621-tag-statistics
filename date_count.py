@@ -7,12 +7,13 @@ directory = 'C:/Scripts/Python/[adjective][species]/'
 with open('{}date-out.json'.format(directory)) as f:
 	data = f.read().split(',')
 
+	stopwords = ['2021']
 	yearcount = {}
 	years = []
 	posts = []
 	for item in data:
 		year = item.split('-')[0][1:]
-		if year not in yearcount:
+		if year not in yearcount and year not in stopwords:
 			yearcount[year] = 1
 		else:
 			yearcount[year] += 1
@@ -21,7 +22,7 @@ with open('{}date-out.json'.format(directory)) as f:
 		#for year, count in word_counter.most_common():
 		for year, count in word_counter:
 			print(year, count)
-			year_min =
+			year_min = 
 			year_max = 
 			
 			#o.write('{0}: {1}\n'.format(year, count))
