@@ -18,10 +18,13 @@ with open('{}date-out.json'.format(directory)) as f:
 			yearcount[year] += 1
 	word_counter = collections.Counter(yearcount)
 	with open('{}year_count.txt'.format(directory), 'w', encoding='utf-8') as o:
-		for year, count in word_counter.most_common():
-			o.write('{0}: {1}\n'.format(year, count))
-			years.append(year)
-			posts.append(count)
+		#for year, count in word_counter.most_common():
+		for year, count in word_counter:
+			print(year, count)
+			
+			#o.write('{0}: {1}\n'.format(year, count))
+			#years.append(year)
+			#posts.append(count)
 
 	plt.plot(years, posts, color='red', label='Count')
 	plt.title('Posted Per Year (2008-2021)')
