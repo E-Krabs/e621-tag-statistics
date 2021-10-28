@@ -99,6 +99,3 @@ with open('{}tag-out.json'.format(directory), 'r') as f:
 	plt.title('Artists (957,625)')
 	#plt.show()
 	plt.savefig('{}artist_tag_plot.png'.format(directory), dpi=300, bbox_inches='tight') #transparent=True
-
-	plt.pie(y, labels = mylabels, explode=myexplode, autopct='%1.2f%%')
-	plt.show()
