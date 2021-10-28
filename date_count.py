@@ -20,19 +20,9 @@ with open('{}date-out.json'.format(directory)) as f:
 			o.write('{0}: {1}\n'.format(year, count))
 
 	print('Plotting Posts Per Year...')
-	lst = word_counter.most_common(5)
+	lst = word_counter.most_common(15)
 	df = pd.DataFrame(lst, columns = ['Year', 'Posts'])
 	df = df.sort_values(by=['Year'], ascending=True)
 	df.plot(x='Year', y='Posts', color='red')
 	plt.title('Posted Per Year (2008-2021)')
 	plt.savefig('{}posts_per_year_plot.png'.format(directory), dpi=300, bbox_inches='tight') #transparent=True
-
-	print('Plotting Total Posts...')
-	lst = word_counter.most_common(5)
-	df = pd.DataFrame(lst, columns = ['Year', 'Posts'])
-	df = df.sort_values(by=['Year'], ascending=True)
-	
-	df.plot(x='Year', y='Posts', color='red')
-	plt.title('Posted Per Year (2008-2021)')
-	plt.savefig('{}posts_per_year_plot.png'.format(directory), dpi=300, bbox_inches='tight') #transparent=True
-
