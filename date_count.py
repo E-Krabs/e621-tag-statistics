@@ -21,13 +21,15 @@ with open('{}date-out.json'.format(directory)) as f:
 		#for year, count in word_counter.most_common():
 		for year, count in word_counter:
 			print(year, count)
+			year_min =
+			year_max = 
 			
 			#o.write('{0}: {1}\n'.format(year, count))
 			#years.append(year)
 			#posts.append(count)
 
 	plt.plot(years, posts, color='red', label='Count')
-	plt.title('Posted Per Year (2008-2021)')
+	plt.title('Posted Per Year ({0}, ' - ', {1})'.format(year_min, year_max)
 	plt.xlabel('Year')
 	plt.ylabel('Posts')
 	plt.grid()
