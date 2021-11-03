@@ -7,7 +7,7 @@ display = 20 #int(input('Tags to Plot: '))
 print('Loading JSON...')
 
 directory = 'C:/Scripts/Python/[adjective][species]/'
-with open('{}tag-out.json'.format(directory), 'r') as f:
+with open('{}JSON/tag-out.json'.format(directory), 'r') as f:
 	data = json.load(f)
 
 	wordcount = {}
@@ -26,6 +26,7 @@ with open('{}tag-out.json'.format(directory), 'r') as f:
 
 	print('Plotting General...')
 	lst = word_counter.most_common(display)
+	print(lst)
 	df = pd.DataFrame(lst, columns = ['General Tag', 'Count'])
 	df.plot.bar(x='General Tag',y='Count')
 	plt.title('General (957,625)')
