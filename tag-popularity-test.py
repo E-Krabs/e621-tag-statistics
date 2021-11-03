@@ -22,10 +22,11 @@ with open('{}e621-total-2021-10-25-a.json'.format(directory), 'r') as f:
 			else:
 				dic['{}'.format(created_at)][word] += 1
 
+	lst = []
 	for key in dic:
 		r = dic[key]['anthro']
 		print('{}: {}'.format(key, r))
-		lst = dic(zip(key, r))
+		lst.append(dic(zip(key, r)))
 		
 	print('Plotting Popularity...')
 	df = pd.DataFrame(lst, columns = ['Date', 'Count'])
