@@ -29,6 +29,8 @@ with open('{}e621-total-2021-10-25-a.json'.format(directory), 'r') as f:
 		lst.append(dic(zip(key, r)))
 	print(lst)	
 		
+	#https://pythonguides.com/python-plot-multiple-lines/#Python_plot_multiple_lines_from_dataframe
+		
 	#print('Plotting Popularity...')
 	#df = pd.DataFrame(lst, columns = ['Date', 'Count'])
 	#df.plot.bar(x='Date',y='Count')
