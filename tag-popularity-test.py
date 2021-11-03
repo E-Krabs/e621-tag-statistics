@@ -13,7 +13,7 @@ with open('{}e621-total-2021-10-25-a.json'.format(directory), 'r') as f:
 		created_at = '{}-{}'.format(y, m)
 
 		if created_at not in dic:
-			dic[created_at] = {} #in dic, create empty dict with the name 2021-10
+			dic[created_at] = {}
 		general = key['tags']['general']
 
 		for word in general:
