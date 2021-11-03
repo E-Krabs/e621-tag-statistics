@@ -28,9 +28,8 @@ with open('{}e621-total-2021-10-25-a.json'.format(directory), 'r') as f:
 		lst = dic(zip(key, r))
 		
 	print('Plotting Popularity...')
-	lst = word_counter.most_common(display)
 	df = pd.DataFrame(lst, columns = ['Date', 'Count'])
 	df.plot.bar(x='Date',y='Count')
 	plt.title('Characters (957,625)')
-	#plt.show()
+	plt.show()
 	plt.savefig('{}popularity_tag_plot.png'.format(directory), dpi=300, bbox_inches='tight') #transparent=True
