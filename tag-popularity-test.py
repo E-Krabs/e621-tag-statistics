@@ -25,6 +25,7 @@ with open('{}e621-total-2021-10-25-a.json'.format(directory), 'r') as f:
 			else:
 				dic['{}'.format(created_at)][word] += 1
 
+	#with open('{}'.format(directory), 'w') as o:
 	lst = []
 	for key in dic:
 		r1 = dic[key]['{}'.format(tag1)]
@@ -35,10 +36,10 @@ with open('{}e621-total-2021-10-25-a.json'.format(directory), 'r') as f:
 		
 	#https://pythonguides.com/python-plot-multiple-lines/#Python_plot_multiple_lines_from_dataframe
 		
-	#print('Plotting Popularity...')
-	#df = pd.DataFrame(lst, columns = ['Date', '{}'.format(tag1), '{}'.format(tag2)])
-	#df.plot(x='Date', y='{}'.format(tag1))
-	#df.plot(x='Date', y='{}'.format(tag2))
-	#plt.title('Popularity of {} & {}'.format(tag1, tag2))
-	#plt.show()
+	print('Plotting Popularity...')
+	df = pd.DataFrame(lst, columns = ['Date', '{}'.format(tag1), '{}'.format(tag2)])
+	df.plot(x='Date', y='{}'.format(tag1))
+	df.plot(x='Date', y='{}'.format(tag2))
+	plt.title('Popularity of {} & {}'.format(tag1, tag2))
+	plt.show()
 	#plt.savefig('{}{}_{}_plot.png'.format(directory, tag1, tag2), dpi=300, bbox_inches='tight') #transparent=True
