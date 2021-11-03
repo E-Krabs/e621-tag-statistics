@@ -22,21 +22,15 @@ with open('{}e621-total-2021-10-25-a.json'.format(directory), 'r') as f:
 			else:
 				dic['{}'.format(created_at)][word] += 1
 
-	#for key in dic.values():
-	#	for key in key:
-	#		print(key)
 	for key in dic:
 		r = dic[key]['anthro']
 		print('{}: {}'.format(key, r))
-
-	#temp = 'anthro'
-	#res = [sub[temp] for sub in dic.values() if temp in sub.keys()]
-  
-	# printing result 
-	#print("The extracted values : " + str(res)) 
-
-
-
-
-	#with open('{}NIGGERNIGGER.txt'.format(directory), 'w', encoding='utf-8') as o:
-		#o.write(str(dic))
+		lst = dic(zip(key, r))
+		
+	print('Plotting Popularity...')
+	lst = word_counter.most_common(display)
+	df = pd.DataFrame(lst, columns = ['Date', 'Count'])
+	df.plot.bar(x='Date',y='Count')
+	plt.title('Characters (957,625)')
+	#plt.show()
+	plt.savefig('{}popularity_tag_plot.png'.format(directory), dpi=300, bbox_inches='tight') #transparent=True
