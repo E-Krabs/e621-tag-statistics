@@ -9,6 +9,8 @@ JSON Dumping Scripts for e621's API.
 <code>id_count.py</code> Counts all ids from the exported JSON file. Gives total number of posts.<br>
 <h3><b>TODO:<b></h3><br>
 <ul>
-  <li><b>Extract</b> <code>created_at</code> and <code>tags</code> to plot popularity of a tag over a time period.</li><br>
+  <li><b>Extract</b> <code>created_at</code> and <code>tags</code> to plot popularity of a tag over a time period.</li>
+  <b>[+++++.....] 50%</b><br>
   <li><b>Merge</b> <code>tag_export.py</code> and <code>tag_count</code></li>
+  <b>[..........] 0%</b>
  </ul>
