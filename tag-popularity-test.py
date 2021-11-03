@@ -38,8 +38,9 @@ with open('{}e621-total-2021-10-25-a.json'.format(directory), 'r') as f:
 		
 	print('Plotting Popularity...')
 	df = pd.DataFrame(lst, columns = ['Date', '{}'.format(tag1), '{}'.format(tag2)])
-	df.plot(x='Date', y='{}'.format(tag1))
-	df.plot(x='Date', y='{}'.format(tag2))
+	df.plot(x='Date', y='{}'.format(tag1), color='g', label='{}'.format(tag1))
+	df.plot(x='Date', y='{}'.format(tag2), color='r', label='{}'.format(tag2))
 	plt.title('Popularity of {} & {}'.format(tag1, tag2))
+	plt.legend()
 	plt.show()
 	#plt.savefig('{}{}_{}_plot.png'.format(directory, tag1, tag2), dpi=300, bbox_inches='tight') #transparent=True
