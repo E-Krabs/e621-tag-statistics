@@ -25,9 +25,9 @@ with open('{}e621-total-2021-10-25-a.json'.format(directory), 'r') as f:
 	#for key in dic.values():
 	#	for key in key:
 	#		print(key)
-
 	for key in dic:
-		print(key.get('anthro'))
+		r = dic[key]['anthro']
+		print('{}: {}'.format(key, r))
 
 	#temp = 'anthro'
 	#res = [sub[temp] for sub in dic.values() if temp in sub.keys()]
