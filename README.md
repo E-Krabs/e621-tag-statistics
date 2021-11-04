@@ -29,7 +29,7 @@ Scripts to analyze the furry fandom through the content it produces and consumes
   <li><b>omit_empty</b> - whether or not to omit entries with value of 0.</li>
   <li><b>omit_final</b> - whether or not to omit the final entry (which might skew the line low when run during the begining of the month).</li>
   <li><b>Implement</b> argparse</li> 
-  <li><b>Colours</b> http://colormind.io/</li>
+  <li><b>Colours:</b> https://matplotlib.org/stable/gallery/color/named_colors.html, http://colormind.io/</li>
 </ul>
 <br>
 Based heavily off of this project: https://explore621.net/
