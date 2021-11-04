@@ -1,13 +1,15 @@
 # e621-json-dump
-Scripts to analyze the furry fandom through the content it produces and consumes.
+<h3><b>About</b></h3>
+Scripts to analyze the furry fandom through the content it produces and consumes.<br>
 
-"Images are posted to e621 all the time! There are lots of them there, and more every day. This gives us quite a bit of data, but one of the benefits of the site is the rather stringent dedication to tagging that it has: every image must be tagged with information describing what's in it, who's in it, who created it, and so on. In addition to tagging, e621 lets you favorite and rate posts. Using these two bits of data, we can estimate how popular something is in furry media in terms of both creating and consumption." - explore621<br>
+Every image on e621 must be tagged with info describing what's in it (characters, artist, acts, etc.). Using this information provided via the <a href="https://e621.net/posts.json">e621 API</a>, we can plot the popularity of something in furry media.
 
+<h3><b>Fetching Data</b></h3>
+This project fetches data from e621 provided via the <a href="https://e621.net/posts.json">e621 API</a>. <code>main.py</code> collects as much data as it can. This opperation can take a few hours, because API requests are limited to 2 per second. But we make requests only once per second to avoid a 503. Every request returns 1000 posts.
 
 <hr>
-
 <ul>
-  <li><code>main.py</code> Dumps https://e621.net/posts.json. Dumps as much as it can (~950,000/~2.5mil Posts). Takes ~6 hours to complete.<br>
+  <li><code>main.py</code> Dumps https://e621.net/posts.json. Dumps as much as it can. Takes ~6 hours to complete.<br>
   <li><code>tag_popularity.py</code> Plots the popularity of two tags to compare (from 2007-2021).<br>
   <li><b>Merge</b><code>tag_export.py</code> Exports tag data from the huge JSON file to a smaller file for easier interpretation.<br>
   <li><b>Merge</b><code>tag_count.py</code> Counts tag data from the exported JSON file. (Artist, General, Species, Characters, etc.)<br>
