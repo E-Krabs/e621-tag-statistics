@@ -26,7 +26,6 @@ with open('{}JSON/e621-total-2021-10-25-a.json'.format(directory), 'r') as f:
 		general = key['tags']['character']
 		species = key['tags']['species']
 		copyright = key['tags']['copyright']
-
 		for word in general:
 			if word not in dic['{}'.format(created_at)]:
 				dic['{}'.format(created_at)][word] = 1
@@ -44,9 +43,7 @@ with open('{}JSON/e621-total-2021-10-25-a.json'.format(directory), 'r') as f:
 				dic['{}'.format(created_at)][word] = 1
 			else:
 				dic['{}'.format(created_at)][word] += 1
-
-
-	#with open('{}'.format(directory), 'w') as o:
+				
 	lst = []
 	for key in dic:
 		try:
