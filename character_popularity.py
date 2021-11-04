@@ -4,10 +4,8 @@ import matplotlib.pyplot as plt
 import matplotlib.dates
 from datetime import datetime
 
-#tag1 = input('First Character to Compare: ')
-#tag2 = input('Second Character to Compare: ')
-tag1 = 'blitzo_(helluva_boss)'
-tag2 = 'stolas_(helluva_boss)'
+tag1 = input('First Character to Compare: ')
+tag2 = input('Second Character to Compare: ')
 
 print('Loading JSON...')
 directory = 'C:/Scripts/Python/[adjective][species]/'
