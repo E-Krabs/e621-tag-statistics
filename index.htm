@@ -29,6 +29,14 @@ body {
   height: 33.33%; /* Should be removed. Only for demonstration */
 }
 
+/* Create one columns */
+.column_long {
+  float: left;
+  width: 100%;
+  padding: 10px;
+  height: 33.33%; /* Should be removed. Only for demonstration */
+}	
+	
 /* Clear floats after the columns */
 .row:after {
   content: "";
@@ -45,7 +53,7 @@ body {
 
 /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
 @media (max-width: 600px) {
-  .column {
+  .column .column_long{
     width: 100%;
     height: 100%;
   }
@@ -111,7 +119,11 @@ body {
 		</div>
 		<div class="column" style="background-color:#ccc;">
 			<img src="Report/character_tag_plot.png" style="max-height:100%; max-width:100%;">
+		<div class="column" style="background-color:#ccc;">
+			<img src="Report/artist_tag_plot.png" style="max-height:100%; max-width:100%;">
 		</div>
+		<div class="long_column" style="background-color:#ccc;">
+			<img src="Report/posts_per_year_plot.png" style="max-height:100%; max-width:100%;">
 	</div>
 
 	<div class="footer">
