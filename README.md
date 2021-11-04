@@ -30,7 +30,7 @@ This project fetches data from e621 provided via the <a href="https://e621.net/p
   <b>[++++++++++] 100%</b><br>
   <li><b>Merge</b> <code>tag_export.py</code> and <code>tag_count.py</code>.</li>
   <b>[++________] 20%</b>
-  <li>Plot more data.</li>
+  <li><b>Plot</b> more data.</li>
   <li><b>Create</b> admin dashboard</li>
   <li><b>Seaborn</b> for more attrative plots.</li>
   <li><b>omit_empty</b> - whether or not to omit entries with value of 0.</li>
