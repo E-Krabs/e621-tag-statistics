@@ -5,7 +5,7 @@ Scripts to analyze the furry fandom through the content it produces and consumes
 Every image on e621 must be tagged with info describing what's in it (characters, artist, acts, etc.). Using this information provided via the <a href="https://e621.net/posts.json">e621 API</a>, we can plot the popularity of something in furry media.
 
 <h3><b>Fetching Data</b></h3>
-This project fetches data from e621 provided via the <a href="https://e621.net/posts.json">e621 API</a>. <code>main.py</code> collects as much data as it can. This opperation can take a few hours, because API requests are limited to 2 per second. But we make requests only once per second to avoid a 503. Every request returns 1000 posts.
+This project fetches data from e621 provided via the <a href="https://e621.net/posts.json">e621 API</a>. <code>main.py</code> collects as much data as it can. This opperation can take a few hours, because API requests are limited to 2 per second. But we make requests only once per second to avoid a 503. Every request returns 1000 posts. The script writes the returned results to a JSON file for later analisys.
 
 <hr>
 <ul>
