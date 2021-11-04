@@ -24,7 +24,7 @@ Scripts to analyze the furry fandom through the content it produces and consumes
 
 <h3><b>TODO:</b></h3>
 <ul>
-  <li><strike><b>Extract</b> <code>created_at</code> and <code>tags</code> to plot popularity of a tag over a time period.</strike></li>
+  <li>✓ <strike><b>Extract</b> <code>created_at</code> and <code>tags</code> to plot popularity of a tag over a time period.</strike></li>
   <b>[++++++++++] 100%</b><br>
   <li><b>Merge</b> <code>tag_export.py</code> and <code>tag_count.py</code>.</li>
   <b>[++________] 20%</b>
