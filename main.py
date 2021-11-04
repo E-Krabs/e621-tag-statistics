@@ -5,28 +5,29 @@ import json
 
 url = "https://e621.net/posts.json?limit=1000"
 e621_agent = {
-   'User-Agent': 'TagData (by EKrabs)',
-   'login': 'EKrabs',
-   'api_key': '7yqTWqrn1CLk4nG6q4J1W6s4'
+   'User-Agent': '',
+   'login': '',
+   'api_key': ''
 }
 
-login = 'EKrabs'
-api_key = '7yqTWqrn1CLk4nG6q4J1W6s4'
+login = ''
+api_key = ''
 
 max_id = 2992268 #2992268
 seen = []
 run = 0
 directory = 'C:/Scripts/Python/[adjective][species]/'
 with open('{}e621-total-2021-10-25.json'.format(directory), 'w') as f:
-	#with open('{}seen.json'.format(directory), 'w') as s:
-	#s.write('[')
 	f.write('[')
 	while max_id > 0:
-		r = requests.get('{0}&page=b{1}'.format(url, max_id), headers=e621_agent, auth=HTTPBasicAuth(login, api_key))
+		''' When refreshing data, change page=b{} to page=a{} '''
+		r = requests.get('{}&page=b{}'.format(url, max_id), headers=e621_agent, auth=HTTPBasicAuth(login, api_key))
 		if r.status_code != 200:
 			print('Error got: {}'.format(r.status_code, r.text))
 		if r.status_code == 429:
 			print('!!! 429 !!!')
+		if r.status_code == 503:
+			print('!!! 503 !!!')
 		data = r.json()
 		for item in data['posts']:
 			post_id = item['id']
@@ -34,11 +35,10 @@ with open('{}e621-total-2021-10-25.json'.format(directory), 'w') as f:
 				continue
 			seen.append(item['file']['md5'])
 			#s.write(json.dumps(seen, indent=2))
-			print('#{0} Dumped {1}'.format(run, post_id))
+			print('#{} Dumped {}'.format(run, post_id))
 			f.write(json.dumps(item))
 			f.write(',')
 		max_id -= 1000
 		time.sleep(2)
 		run += 1
 	f.write(']')
-	#s.write(']')
