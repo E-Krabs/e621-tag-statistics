@@ -1,6 +1,9 @@
 # e621-json-dump
 Scripts to analyze the furry fandom through the content it produces and consumes.
 
+"Images are posted to e621 all the time! There are lots of them there, and more every day. This gives us quite a bit of data, but one of the benefits of the site is the rather stringent dedication to tagging that it has: every image must be tagged with information describing what's in it, who's in it, who created it, and so on. In addition to tagging, e621 lets you favorite and rate posts. Using these two bits of data, we can estimate how popular something is in furry media in terms of both creating and consumption." - explore621<br>
+
+
 <hr>
 
 <ul>
@@ -33,5 +36,5 @@ Scripts to analyze the furry fandom through the content it produces and consumes
   <li><b>Colours:</b> https://matplotlib.org/stable/gallery/color/named_colors.html, http://colormind.io/, https://towardsdatascience.com/making-matplotlib-beautiful-by-default-d0d41e3534fd</li>
 </ul>
 <br>
-Based heavily off of this project: https://explore621.net/
+Based <i>heavily</i> off of this project: https://explore621.net/
 #	C5H8NO4Na
