@@ -89,4 +89,4 @@ with open('{}JSON/e621-total-2021-10-25-a.json'.format(directory), 'r') as f:
 	#plt.title('Zootopia's influence on Foxes and Rabbits')
 	plt.xticks(rotation=60)
 	plt.legend()
-	plt.savefig('{}{}_{}_{}_{}_{}influence_plot.png'.format(directory, tag1, tag2, tag3, tag4, tag5), dpi=300, bbox_inches='tight') #transparent=True
+	plt.savefig('{}{}_{}_{}_{}_{}_influence_plot.png'.format(directory, tag1, tag2, tag3, tag4, tag5), dpi=300, bbox_inches='tight') #transparent=True
