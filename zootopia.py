@@ -86,7 +86,7 @@ with open('{}JSON/e621-total-2021-10-25-a.json'.format(directory), 'r') as f:
 	plt.plot(df['Date'], df['{}'.format(tag3)], color='b', label='{}'.format(tag3))
 	plt.plot(df['Date'], df['{}'.format(tag4)], color='m', label='{}'.format(tag4))
 	plt.plot(df['Date'], df['{}'.format(tag5)], color='y', label='{}'.format(tag5))
-	#plt.title('Helluva Boss Character Popularity')
+	#plt.title('Zootopia's influence on Foxes and Rabbits')
 	plt.xticks(rotation=60)
 	plt.legend()
 	plt.savefig('{}{}_{}_{}_{}_{}influence_plot.png'.format(directory, tag1, tag2, tag3, tag4, tag5), dpi=300, bbox_inches='tight') #transparent=True
