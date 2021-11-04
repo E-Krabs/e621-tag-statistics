@@ -25,6 +25,7 @@ Scripts to analyze the furry fandom through the content it produces and consumes
   <b>[++++++++++] 100%</b><br>
   <li><b>Merge</b> <code>tag_export.py</code> and <code>tag_count.py</code>.</li>
   <b>[++________] 20%</b>
+  <li><b>Seaborn</b> for more attrative plots.</li>
   <li><b>omit_empty</b> - whether or not to omit entries with value of 0.</li>
   <li><b>omit_final</b> - whether or not to omit the final entry (which might skew the line low when run during the begining of the month).</li>
   <li><b>Implement</b> argparse</li> 
