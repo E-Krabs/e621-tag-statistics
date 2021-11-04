@@ -31,9 +31,9 @@ This project fetches data from e621 provided via the <a href="https://e621.net/p
   <li><b>Merge</b> <code>tag_export.py</code> and <code>tag_count.py</code>.</li>
   <b>[++________] 20%</b>
   <li><b>Plot</b> more data.</li>
-  <li><b>Create</b> admin dashboard</li>
+  <li>✓ <strike><b>Create</b> admin dashboard</strike></li>
   <li><b>Seaborn</b> for more attrative plots.</li>
-  <li><b>omit_empty</b> - whether or not to omit entries with value of 0.</li>
+  <li>✓ <strike><b>omit_empty</b> - whether or not to omit entries with value of 0.</strike></li>
   <li><b>omit_final</b> - whether or not to omit the final entry (which might skew the line low when run during the begining of the month).</li>
   <li><b>Implement</b> argparse</li>
   <li><b>Colours:</b> https://matplotlib.org/stable/gallery/color/named_colors.html, http://colormind.io/, https://towardsdatascience.com/making-matplotlib-beautiful-by-default-d0d41e3534fd</li>
