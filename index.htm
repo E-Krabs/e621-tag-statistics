@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>CSS Template</title>
+<title>e621 Data</title>
+<link rel="icon" type="image/x-icon" href="https://e621.net/favicon.ico">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
@@ -21,9 +22,19 @@ body {
   font-size: 20px;
 }
 
+.col-container {
+  display: flex;
+  width: 100%;
+}
+.col {
+  flex: 1;
+  padding: 16px;
+}
+
 /* Create two equal columns that floats next to each other */
 .column {
   float: left;
+  flex: 1;
   width: 50%;
   padding: 10px;
   height: 33.33%; /* Should be removed. Only for demonstration */
@@ -48,6 +59,13 @@ body {
 .footer {
   background-color: #f1f1f1;
   padding: 10px;
+  text-align: center;
+}
+
+.log {
+  background-color: #111;
+  color: white;
+  padding: 5px;
   text-align: center;
 }
 
@@ -96,42 +114,53 @@ body {
 <body>
 
 <div class="sidenav">
-	<a href="/report/report1.htm">Zootopia's Influence</a>
-	<a href="#">Link</a>
-	<a href="#">Link</a>
+	<a>Dashboard</a>
+	<hr>
+	<a href="/report/1.htm">Zootopia's Influence</a>
+	<a href="/report/2.htm">Helluva Boss Characters</a>
+	<a href="/report/3.htm">Popular Ponies</a>
 </div>
 
 <div class="content">
-	<h2>CSS Template using Float</h2>
-	<p>In this example, we have created a header, three equal columns and a footer. On smaller screens, the columns will stack on top of each other.</p>
-	<p>Resize the browser window to see the responsive effect.</p>
-
 	<div class="header">
-		<h2>Header</h2>
+		<h2>e621 Data</h2>
 	</div>
 
-	<div class="row">
-		<div class="column" style="background-color:#aaa;">
-			<img src="Report/general_tag_plot.png" style="max-height:100%; max-width:100%;">
-		</div>
-		<div class="column" style="background-color:#bbb;">
-			<img src="Report/species_tag_plot.png" style="max-height:100%; max-width:100%;">
-		</div>
-		<div class="column" style="background-color:#ccc;">
-			<img src="Report/character_tag_plot.png" style="max-height:100%; max-width:100%;">
-		</div>
-		<div class="column" style="background-color:#ccc;">
-			<img src="Report/artist_tag_plot.png" style="max-height:100%; max-width:100%;">
-		</div>
+	<div class="col-container">
+	  <div class="col" style="background:#A0999B">
+	  	<center>
+	    <h2>General</h2>
+	    <img src="file:///C:/Scripts/Python/[adjective][species]/Report/general_tag_plot.png" style="max-height:75%; max-width:75%;">
+	  </div>
+
+	  <div class="col" style="background:#A0999B">
+	  	<center>
+	    <h2>Species</h2>
+	    <img src="file:///C:/Scripts/Python/[adjective][species]/Report/species_tag_plot.png" style="max-height:75%; max-width:75%;">
+	  </div>
 	</div>
-	<div class="row">
-		<div class="long_column" style="background-color:#ccc;">
-			<img src="Report/posts_per_year_plot.png" style="max-height:100%; max-width:100%;">
-		</div>
+
+	<div class="col-container">
+	  <div class="col" style="background:#897A8D">
+	  	<center>
+	    <h2>Characters</h2>
+	    <img src="file:///C:/Scripts/Python/[adjective][species]/Report/character_tag_plot.png" style="max-height:75%; max-width:75%;">
+	  </div>
+
+	  <div class="col" style="background:#897A8D">
+	  	<center>
+	    <h2>Artists</h2>
+	    <img src="file:///C:/Scripts/Python/[adjective][species]/Report/artist_tag_plot.png" style="max-height:75%; max-width:75%;">
+	  </div>
+	</div>
+
+	<div class="log">
+		<p>Last Ingest: <b>e621-total-2021-10-25-a.json</b></p>
 	</div>
 
 	<div class="footer">
-		<p>w3.css</p>
+		<p>Data provided via the <a href="https://e621.net/post/index.json">e621 API</a> | <a href="https://github.com/E-Krabs/e621-json-dump">Github</a></p> 
+		<p>Expaned on "<a href="https://explore621.net">explore621</a>" by <a href="https://adjectivespecies.com/">[adjective][species]</a> licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA</a>. Project source is licensed under the <a href="https://github.com/E-Krabs/e621-json-dump/blob/main/LICENSE">MIT License</a></p>
 	</div>
 </div>
 
