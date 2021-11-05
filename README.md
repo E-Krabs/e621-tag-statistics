@@ -32,7 +32,7 @@ This project fetches data from e621 provided via the <a href="https://e621.net/p
   <b>[++________] 20%</b>
   <li><b>Plot</b> more data.</li>
   <li>✓ <strike><b>Create</b> admin dashboard</strike></li>
-  <li><b>Seaborn</b> for more attrative plots.</li>
+  <li>X <strike><b>Seaborn</b> for more attrative plots.</strike></li>
   <li>✓ <strike><b>omit_empty</b> - whether or not to omit entries with value of 0.</strike></li>
   <li><b>omit_final</b> - whether or not to omit the final entry (which might skew the line low when run during the begining of the month).</li>
   <li><b>Implement</b> argparse</li>
