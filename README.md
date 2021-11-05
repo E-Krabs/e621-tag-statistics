@@ -36,8 +36,6 @@ This project fetches data from e621 provided via the <a href="https://e621.net/p
   <li>✓ <strike><b>omit_empty</b> - whether or not to omit entries with value of 0.</strike></li>
   <li><b>omit_final</b> - whether or not to omit the final entry (which might skew the line low when run during the begining of the month).</li>
   <li><b>Implement</b> argparse</li>
-  <li><b>Colours:</b> https://matplotlib.org/stable/gallery/color/named_colors.html, http://colormind.io/, https://towardsdatascience.com/making-matplotlib-beautiful-by-default-d0d41e3534fd</li>
 </ul>
 <br>
-Based <i>heavily</i> off of this project: https://explore621.net/
-#	C5H8NO4Na
+Expaned on "explore621" by [adjective][species] licensed under CC BY-NC-SA.
