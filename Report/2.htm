@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Report 2</title>
+<title>e621 Data</title>
 <link rel="icon" type="image/x-icon" href="https://e621.net/favicon.ico">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,6 +14,12 @@ body {
 	margin: 0;
 	font-family: Arial, Helvetica, sans-serif;
 }
+
+@font-face {
+    font-family: Game Of Squids;
+    src: url("/e621-json-dump/Font/Game_Of_Squids.otf") format("opentype");
+}
+
 /* Style the header */
 .header {
   background-color: #f1f1f1;
@@ -62,6 +68,13 @@ body {
   text-align: center;
 }
 
+.log {
+  background-color: #111;
+  color: white;
+  padding: 5px;
+  text-align: center;
+}
+
 /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
 @media (max-width: 600px) {
   .column .column_long{
@@ -82,10 +95,6 @@ body {
 	overflow-x: hidden;
 }
 
-.sidenav_current {
-	background-color: #ddd;
-	color: black;
-}
 
 /* Side navigation links */
 .sidenav a {
@@ -111,7 +120,7 @@ body {
 <body>
 
 <div class="sidenav">
-	<a href="../index.htm">Dashboard</a>
+	<a>Dashboard</a>
 	<hr>
 	<a href="/e621-json-dump/Report/1.htm">Zootopia's Influence</a>
 	<a href="/e621-json-dump/Report/2.htm">Helluva Boss Characters</a>
@@ -121,24 +130,46 @@ body {
 
 <div class="content">
 	<div class="header">
-		<h2>e621 Data</h2>
+		<h2 style="font-family: Game Of Squids;">e621 Data</h2>
 	</div>
-		
+
 	<div class="col-container">
 	  <div class="col" style="background:#A0999B">
 	  	<center>
-	    <h2>Helluva Boss Character Popularity (omit_empty)</h2>
-	    <img src="/e621-json-dump/Report/loona_(helluva_boss)_stolas_(helluva_boss)_blitzo_(helluva_boss)_moxxie_(helluva_boss)_millie_(helluva_boss)_influence_plot.png" style="max-height:65%; max-width:65%;">
+	    <h2>General</h2>
+	    <img src="/e621-json-dump/Report/general_tag_plot.png" style="max-height:75%; max-width:75%;">
 	  </div>
+
+	  <div class="col" style="background:#A0999B">
+	  	<center>
+	    <h2>Species</h2>
+	    <img src="/e621-json-dump/Report/species_tag_plot.png" style="max-height:75%; max-width:75%;">
+	  </div>
+	</div>
+
+	<div class="col-container">
+	  <div class="col" style="background:#897A8D">
+	  	<center>
+	    <h2>Characters</h2>
+	    <img src="/e621-json-dump/Report/character_tag_plot.png" style="max-height:75%; max-width:75%;">
+	  </div>
+
+	  <div class="col" style="background:#897A8D">
+	  	<center>
+	    <h2>Artists</h2>
+	    <img src="/e621-json-dump/Report/artist_tag_plot.png" style="max-height:75%; max-width:75%;">
+	  </div>
+	</div>
+
+	<div class="log">
+		<p>Last Ingest: <b>e621-total-2021-10-25-a.json</b></p>
 	</div>
 
 	<div class="footer">
 		<p>Data provided via the <a href="https://e621.net/post/index.json">e621 API</a> | <a href="https://github.com/E-Krabs/e621-json-dump">Github</a></p> 
-		<p>Expaned on "<a href="https://explore621.net">explore621</a>" by <a href="https://adjectivespecies.com/">[adjective][species]</a> licensed under CC BY-NC-SA. Project source is licensed under the <a href="https://github.com/E-Krabs/e621-json-dump/blob/main/LICENSE">MIT License</a></p>
+		<p>Expaned on "<a href="https://explore621.net">explore621</a>" by <a href="https://adjectivespecies.com/">[adjective][species]</a> licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA</a>. Project source is licensed under the <a href="https://github.com/E-Krabs/e621-json-dump/blob/main/LICENSE">MIT License</a></p>
 	</div>
 </div>
 
 </body>
 </html>
-
-
