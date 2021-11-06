@@ -9,8 +9,8 @@ This project fetches data from e621 provided via the <a href="https://e621.net/p
 
 <hr>
 <ul>
-  <li><code>main.py</code> Dumps https://e621.net/posts.json. Dumps as much as it can. Takes ~6 hours to complete.<br>
-  <li><code>tag_popularity.py</code> Plots the popularity of two tags to compare (from 2007-2021).<br>
+  <li><code>main.py</code> Dumps https://e621.net/posts.json. Dumps as much as it can. Takes ~18 hours to complete.<br>
+  <li><code>tag_popularity.py</code> Plots the popularity of two tags to compare.<br>
   <li><b>Merge</b><code>tag_export.py</code> Exports tag data from the huge JSON file to a smaller file for easier interpretation.<br>
   <li><b>Merge</b><code>tag_count.py</code> Counts tag data from the exported JSON file. (Artist, General, Species, Characters, etc.)<br>
   <li><b>Merge</b><code>id_export.py</code> Exports all post ids from the huge JSON file to a smaller file for easier interpretation.<br>
