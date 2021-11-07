@@ -38,4 +38,4 @@ This project fetches data from e621 provided via the <a href="https://e621.net/p
   <li><b>Implement</b> argparse</li>
 </ul>
 <br>
-Expaned on "explore621" by [adjective][species] licensed under CC BY-NC-SA.
+Expaned on "<a href="https://explore621.net">explore621</a>" by <a href="https://adjectivespecies.com/">[adjective][species]</a> licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA</a>. Project source is licensed under the <a href="https://github.com/E-Krabs/e621-json-dump/blob/main/LICENSE">MIT License</a>
