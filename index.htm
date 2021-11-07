@@ -60,14 +60,11 @@ a:active {
   display: flex;
   width: 100%;
 }
+
 .col {
   flex: 1;
   padding: 16px;
   background: #152F56; /* #284980 */
-}
-
-.top_border_round {
-  border-radius: 10px 10px 0px 0px;
 }
 	
 /* Create two equal columns that floats next to each other */
@@ -108,7 +105,7 @@ a:active {
   color: white;
   padding: 5px;
   text-align: center;
-  border-radius: 0px 0px 5px 5px;
+  border-radius: 0px 0px 10px 10px;
 }
 
 /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
@@ -175,13 +172,13 @@ a:active {
 	</div>
 
 	<div class="col-container">
-	  <div class="col">
+	  <div class="col" style="border-radius: 10px 0px 0px 0px;">
 	  	<center>
 	    <h2>General</h2>
 	    <img src="/e621-json-dump/Report/general_tag_plot.png" style="max-height:75%; max-width:75%;">
 	  </div>
 
-	  <div class="col">
+	  <div class="col" style="border-radius: 0px 10px 0px 0px;">
 	  	<center>
 	    <h2>Species</h2>
 	    <img src="/e621-json-dump/Report/species_tag_plot.png" style="max-height:75%; max-width:75%;">
