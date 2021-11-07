@@ -7,18 +7,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 * {
-	box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-	margin: 0;
-	font-family: Arial, Helvetica, sans-serif;
-	background-image: url('/e621-json-dump/Static/body.png');
-	background-color: #020f23; /* #152F56 */
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-image: url('/e621-json-dump/Static/body.png');
+  background-color: #020f23; /* #152F56 */
 }
 
 h2 {
-	color: #B4C7D9; /* white */
+  color: #B4C7D9; /* white */
 }
 
  /* unvisited link */
@@ -42,8 +42,8 @@ a:active {
 } 
 	
 @font-face {
-    font-family: BungeeShade-Regular;
-    src: url("/e621-json-dump/Static/Font/BungeeShade-Regular.ttf");
+  font-family: BungeeShade-Regular;
+  src: url("/e621-json-dump/Static/Font/BungeeShade-Regular.ttf");
 }
 
 /* Style the header */
@@ -66,6 +66,10 @@ a:active {
   background: #152F56; /* #284980 */
 }
 
+.top_border_round {
+  border-radius: 10px 10px 0px 0px;
+}
+	
 /* Create two equal columns that floats next to each other */
 .column {
   float: left;
@@ -104,11 +108,12 @@ a:active {
   color: white;
   padding: 5px;
   text-align: center;
+  border-radius: 0px 0px 5px 5px;
 }
 
 /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
 @media (max-width: 600px) {
-  .column .column_long{
+  .column .column_long {
     width: 100%;
     height: 100%;
   }
@@ -116,38 +121,38 @@ a:active {
 
 /* Style the side navigation */
 .sidenav {
-	height: 100%;
-	width: 200px;
-	position: fixed;
-	z-index: 1;
-	top: 0;
-	left: 0;
-	background-color: #152F56;
-	overflow-x: hidden;
-	background-image: url('/e621-json-dump/Static/header.png');
-	background-repeat: no-repeat;
+  height: 100%;
+  width: 200px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #152F56;
+  overflow-x: hidden;
+  background-image: url('/e621-json-dump/Static/header.png');
+  background-repeat: no-repeat;
 }
 
 
 /* Side navigation links */
 .sidenav a {
-	color: white;
-	padding: 16px;
-	text-decoration: none;
-	display: block;
+  color: white;
+  padding: 16px;
+  text-decoration: none;
+  display: block;
 }
 
 /* Change color on hover */
 .sidenav a:hover {
-	background-color: #ddd;
-	color: black;
+  background-color: #ddd;
+  color: black;
 }
 
 /* Style the content */
 .content {
-	margin-left: 200px;
-	padding-left: 20px;
-	padding-right: 20px;
+  margin-left: 200px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 </style>
 </head>
