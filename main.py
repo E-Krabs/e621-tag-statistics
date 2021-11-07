@@ -13,22 +13,19 @@ e621_agent = {
 login = ''
 api_key = ''
 
-max_id = 3011070 #2992268
+max_id = 3011070
 seen = []
 run = 0
 directory = 'C:/Scripts/Python/[adjective][species]/'
 ''' When refreshing data, change 'w' to 'a' '''
 with open('{}e621-total-2021-11-05-a.json'.format(directory), 'w') as f:
+	''' When refreshing data, remove f.write('[') '''
 	f.write('[')
 	while max_id > 0:
 		''' When refreshing data, change page=b{} to page=a{} '''
 		r = requests.get('{}&page=b{}'.format(url, max_id), headers=e621_agent, auth=HTTPBasicAuth(login, api_key))
-		if r.status_code != 200:
-			print('!!! 200 !!!')
-		if r.status_code == 429:
-			print('!!! 429 !!!')
-		if r.status_code == 503:
-			print('!!! 503 !!!')
+		if r.status_code != 200: #If not OK
+			print('!!! {} !!!'.format(r.status_code))
 		data = r.json()
 		for item in data['posts']:
 			post_id = item['id']
