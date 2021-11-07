@@ -22,6 +22,7 @@ This project fetches data from e621 provided via the <a href="https://e621.net/p
   <li>matplotlib</li>
   <li>pandas</li>
   <li>requests</li>
+  <li>bigjson (if Memory < 64GB)</li>
 </ul>
 
 <h3><b>TODO:</b></h3>
