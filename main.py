@@ -35,7 +35,6 @@ with open('{}e621-total-2021-11-05-a.json'.format(directory), 'w') as f:
 			if item['file']['md5'] in seen:
 				continue
 			seen.append(item['file']['md5'])
-			#s.write(json.dumps(seen, indent=2))
 			print('#{} dumped {}'.format(run, post_id))
 			f.write(json.dumps(item))
 			f.write(',')
