@@ -13,7 +13,8 @@ This project fetches data from e621 provided via the <a href="https://e621.net/p
 
   <li><code>tag_export.py</code> Exports tag data from the huge JSON file to a smaller file for easier interpretation.<br></li>
   <li><code>tag_count.py</code> Plots tag data. (Artist, General, Species, Characters, etc.)<br></li>
-  <li><code>tag_popularity.py</code> Plots the popularity of two tags over a period of time.<br></li>
+  <li><code>tag_popularity.py</code> Compare two general tags.<br></li>
+  <li><code>character_popularity.py</code> Compare two characters.<br></li>
   <li>Rest of .py's just compare tags over a period of time. Results are in <code>/Reports</code></li>
 </ul>
 
