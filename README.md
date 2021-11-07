@@ -26,15 +26,15 @@ This project fetches data from e621 provided via the <a href="https://e621.net/p
 
 <h3><b>TODO:</b></h3>
 <ul>
-  <li><b>Optimize</b> <code>main.py</code>, so it won't take a day long to fetch.
-  <li>✓ <strike><b>Extract</b> <code>created_at</code> and <code>tags</code> to plot popularity of a tag over a time period.</strike></li>
+  <li>Optimize <code>main.py</code>, so it won't take a day long to fetch.
+  <li>✓ <strike>Extract< <code>created_at</code> and <code>tags</code> to plot popularity of a tag over a time period.</strike></li>
   <b>[++++++++++] 100%</b><br>
-  <li>✓ <strike><b>Create</b> admin dashboard</strike></li>
-  <li><b>Merge</b> <code>tag_export.py</code> and <code>tag_count.py</code>.</li>
-  <li>✓ <strike><b>omit_empty</b> - whether or not to omit entries with value of 0.</strike></li>
-  <li><b>omit_final</b> - whether or not to omit the final entry (which might skew the line low when run during the begining of the month).</li>
-  <li><b>Seaborn</b> for more attrative plots.</li>
-  <li><b>Implement</b> argparse</li>
+  <li>✓ <strike>Create admin dashboard</strike></li>
+  <li>Merge <code>tag_export.py</code> and <code>tag_count.py</code>.</li>
+  <li>✓ <strike>omit_empty - Omit entries with value of 0.</strike></li>
+  <li>omit_final - Omit the final entry (which might skew the line low when run during the begining of the month).</li>
+  <li>More attrative plots.</li>
+  <li>Implement argparse</li>
 </ul>
 <br>
 Expaned upon "<a href="https://explore621.net">explore621</a>" by <a href="https://adjectivespecies.com/">[adjective][species]</a> licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA</a>. Project source is licensed under the <a href="https://github.com/E-Krabs/e621-json-dump/blob/main/LICENSE">MIT License</a>
