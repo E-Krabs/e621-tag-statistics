@@ -9,12 +9,12 @@ This project fetches data from e621 provided via the <a href="https://e621.net/p
 
 <hr>
 <ul>
-  <li><code>main.py</code> Dumps https://e621.net/posts.json. Dumps as much as it can. Takes ~5.2 hours to complete.<br>
-  <li><code>tag_popularity.py</code> Plots the popularity of two tags to compare.<br>
-  <li><b>Merge</b><code>tag_export.py</code> Exports tag data from the huge JSON file to a smaller file for easier interpretation.<br>
-  <li><b>Merge</b><code>tag_count.py</code> Counts tag data from the exported JSON file. (Artist, General, Species, Characters, etc.)<br>
-  <li><b>Merge</b><code>id_export.py</code> Exports all post ids from the huge JSON file to a smaller file for easier interpretation.<br>
-  <li><b>Merge</b><code>id_count.py</code> Counts all ids from the exported JSON file. Gives total number of posts.<br>
+  <li><code>main.py</code> Dumps https://e621.net/posts.json. Dumps as much as it can (~3,001,695 posts). Takes ~5.2 hours to complete.<br>
+
+  <li><code>tag_export.py</code> Exports tag data from the huge JSON file to a smaller file for easier interpretation.<br></li>
+  <li><code>tag_count.py</code> Plots tag data. (Artist, General, Species, Characters, etc.)<br></li>
+  <li><code>tag_popularity.py</code> Plots the popularity of two tags over a period of time.<br></li>
+  <li>Rest of .py's just compare tags over a period of time. Results are in <code>/Reports</code></li>
 </ul>
 
 <h3><b>Requirements:</b></h3>
@@ -27,11 +27,11 @@ This project fetches data from e621 provided via the <a href="https://e621.net/p
 
 <h3><b>TODO:</b></h3>
 <ul>
-  <li>Optimize <code>main.py</code>, so it won't take a day long to fetch.
+  <li>Optimize <code>main.py</code>, so it won't take a day long to fetch. I think it's <code>json.dumps()</code></li>
+  <li>Find source of random 501s in <code>main.py</code></li>
   <li>✓ <strike>Extract< <code>created_at</code> and <code>tags</code> to plot popularity of a tag over a time period.</strike></li>
-  <b>[++++++++++] 100%</b><br>
+  <b>[++++++++++] 100%</b><br></li>
   <li>✓ <strike>Create admin dashboard</strike></li>
-  <li>Merge <code>tag_export.py</code> and <code>tag_count.py</code>.</li>
   <li>✓ <strike>omit_empty - Omit entries with value of 0.</strike></li>
   <li>omit_final - Omit the final entry (which might skew the line low when run during the begining of the month).</li>
   <li>More attrative plots.</li>
