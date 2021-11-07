@@ -74,14 +74,6 @@ a:active {
   width: 50%;
   padding: 10px;
   height: 33.33%; /* Should be removed. Only for demonstration */
-}
-
-/* Create one columns */
-.column_long {
-  float: left;
-  width: 100%;
-  padding: 10px;
-  height: 33.33%; /* Should be removed. Only for demonstration */
 }	
 	
 /* Clear floats after the columns */
@@ -108,14 +100,6 @@ a:active {
   border-radius: 0px 0px 10px 10px;
 }
 
-/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
-@media (max-width: 600px) {
-  .column .column_long {
-    width: 100%;
-    height: 100%;
-  }
-}
-
 /* Style the side navigation */
 .sidenav {
   height: 100%;
@@ -129,7 +113,6 @@ a:active {
   background-image: url('/e621-json-dump/Static/header.png');
   background-repeat: no-repeat;
 }
-
 
 /* Side navigation links */
 .sidenav a {
@@ -150,6 +133,28 @@ a:active {
   margin-left: 200px;
   padding-left: 20px;
   padding-right: 20px;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media (max-width: 800px) {
+  .col {
+  	padding: 0px;
+  }
+  .column {
+    width: 100%;
+    height: 100%;
+  }
+  .col-container {
+  	display: block;
+  }
+  .sidenav {
+  	width: 100px;
+  }
+  .content {
+  	margin-left: 100px;
+  	padding-left: 0px;
+  	padding-right: 0px;
+  }
 }
 </style>
 </head>
