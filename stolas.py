@@ -7,7 +7,7 @@ from datetime import datetime
 plt.style.use(['dark_background'])
 
 tag1 = 'stolas_(helluva_boss)'
-display = 10
+display = 20
 print('Loading JSON...')
 directory = 'C:/Scripts/Python/[adjective][species]/'
 with open('{}JSON/tag-out.json'.format(directory), 'r') as f:
