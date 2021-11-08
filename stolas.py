@@ -1,11 +1,13 @@
 import json
+import json
+import collections
 import pandas as pd
 import matplotlib.pyplot as plt
-import matplotlib.dates
 from datetime import datetime
 plt.style.use(['dark_background'])
 
 tag1 = 'stolas_(helluva_boss)'
+display = 10
 print('Loading JSON...')
 directory = 'C:/Scripts/Python/[adjective][species]/'
 with open('{}JSON/tag-out.json'.format(directory), 'r') as f:
