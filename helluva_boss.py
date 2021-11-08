@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 import matplotlib.dates
 from datetime import datetime
 
+omit_final = True
 omit_empty = True
 tag1 = 'loona_(helluva_boss)'
 tag2 = 'stolas_(helluva_boss)'
@@ -12,7 +13,7 @@ tag4 = 'moxxie_(helluva_boss)'
 tag5 = 'millie_(helluva_boss)'
 print('Loading JSON...')
 directory = 'C:/Scripts/Python/[adjective][species]/'
-with open('{}JSON/e621-total-2021-10-25-a.json'.format(directory), 'r') as f:
+with open('{}JSON/tag-out.json'.format(directory), 'r') as f:
 	data = json.load(f)
 
 	print('Counting...')
@@ -55,12 +56,14 @@ with open('{}JSON/e621-total-2021-10-25-a.json'.format(directory), 'r') as f:
 			r5 = dic[key]['{}'.format(tag5)] #result 4
 		except:
 			r5 = 0
-		print('{}: {}-{}, {}-{}'.format(key, tag1, r1, tag2, r2, tag3, r3, tag4, r4, tag5, r5))
+		print('{}: {}-{}, {}-{}, {}-{}, {}-{}, {}-{}'.format(key, tag1, r1, tag2, r2, tag3, r3, tag4, r4, tag5, r5))
 		tr = (key, r1, r2, r3, r4, r5) #tupled result
 		lst.append(tr)
 		
 	print('Plotting Popularity...')
 	df = pd.DataFrame(lst, columns = ['Date', '{}'.format(tag1), '{}'.format(tag2), '{}'.format(tag3), '{}'.format(tag4), '{}'.format(tag5)])
+	if omit_final == True:
+		df = df.iloc[1:, :]
 	df['Date'] = pd.to_datetime(df['Date'])
 	df = df.sort_values(by=['Date'], ascending=True)
 	if omit_empty == True:

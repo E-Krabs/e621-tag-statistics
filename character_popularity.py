@@ -6,10 +6,20 @@ from datetime import datetime
 
 tag1 = input('First Character to Compare: ')
 tag2 = input('Second Character to Compare: ')
+omit_f = input('Omit Final? (y, n):')
+omit_e = input('Omit empty? (y, n):')
+if omit_f == 'y':
+	omit_final = True
+else:
+	omit_final = False
+if omit_e == 'y':
+	omit_empty = True
+else:
+	omit_empty = False
 
 print('Loading JSON...')
 directory = 'C:/Scripts/Python/[adjective][species]/'
-with open('{}JSON/e621-total-2021-10-25-a.json'.format(directory), 'r') as f:
+with open('{}JSON/tag-out.json'.format(directory), 'r') as f:
 	data = json.load(f)
 
 	print('Counting...')
@@ -46,8 +56,13 @@ with open('{}JSON/e621-total-2021-10-25-a.json'.format(directory), 'r') as f:
 		
 	print('Plotting Popularity...')
 	df = pd.DataFrame(lst, columns = ['Date', '{}'.format(tag1), '{}'.format(tag2)])
+	if omit_final == True:
+		df = df.iloc[1:, :]
 	df['Date'] = pd.to_datetime(df['Date'])
 	df = df.sort_values(by=['Date'], ascending=True)
+	if omit_empty == True:
+		dfe = df.loc[:, df.columns!='Date']
+		df = df[(dfe != 0).all(1)]
 	plt.plot(df['Date'], df['{}'.format(tag1)], color='g', label='{}'.format(tag1))
 	plt.plot(df['Date'], df['{}'.format(tag2)], color='r', label='{}'.format(tag2))
 	plt.title('Popularity of {} & {}'.format(tag1, tag2))

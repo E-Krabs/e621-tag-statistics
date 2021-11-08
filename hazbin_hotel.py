@@ -5,12 +5,12 @@ import matplotlib.dates
 from datetime import datetime
 
 omit_final = True
-omit_empty = False
-tag1 = 'nick_wilde'
-tag2 = 'judy_hopps'
-tag3 = 'fox'
-tag4 = 'rabbit'
-tag5 = 'zootopia'
+omit_empty = True
+tag1 = 'angel_dust'
+tag2 = 'charlie_(hazbin_hotel)'
+tag3 = 'alastor_(hazbin_hotel)'
+tag4 = 'husk_(hazbin_hotel)'
+tag5 = 'sir_pentious_(hazbin_hotel)'
 print('Loading JSON...')
 directory = 'C:/Scripts/Python/[adjective][species]/'
 with open('{}JSON/tag-out.json'.format(directory), 'r') as f:
@@ -26,27 +26,12 @@ with open('{}JSON/tag-out.json'.format(directory), 'r') as f:
 		if created_at not in dic:
 			dic[created_at] = {}
 		general = key['tags']['character']
-		species = key['tags']['species']
-		copyright = key['tags']['copyright']
 
 		for word in general:
 			if word not in dic['{}'.format(created_at)]:
 				dic['{}'.format(created_at)][word] = 1
 			else:
 				dic['{}'.format(created_at)][word] += 1
-
-		for word in species:
-			if word not in dic['{}'.format(created_at)]:
-				dic['{}'.format(created_at)][word] = 1
-			else:
-				dic['{}'.format(created_at)][word] += 1
-
-		for word in copyright:
-			if word not in dic['{}'.format(created_at)]:
-				dic['{}'.format(created_at)][word] = 1
-			else:
-				dic['{}'.format(created_at)][word] += 1
-
 
 	#with open('{}'.format(directory), 'w') as o:
 	lst = []
@@ -89,7 +74,7 @@ with open('{}JSON/tag-out.json'.format(directory), 'r') as f:
 	plt.plot(df['Date'], df['{}'.format(tag3)], color='b', label='{}'.format(tag3))
 	plt.plot(df['Date'], df['{}'.format(tag4)], color='m', label='{}'.format(tag4))
 	plt.plot(df['Date'], df['{}'.format(tag5)], color='y', label='{}'.format(tag5))
-	#plt.title('Zootopia's influence on Foxes and Rabbits')
+	#plt.title('Hazbin Hotel Character Popularity')
 	plt.xticks(rotation=60)
 	plt.legend()
-	plt.savefig('{}{}_{}_{}_{}_{}_influence_plot.png'.format(directory, tag1, tag2, tag3, tag4, tag5), dpi=300, bbox_inches='tight') #transparent=True
+	plt.savefig('{}{}_{}_{}_{}_{}_plot.png'.format(directory, tag1, tag2, tag3, tag4, tag5), dpi=300, bbox_inches='tight') #transparent=True

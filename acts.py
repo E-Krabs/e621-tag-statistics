@@ -4,7 +4,8 @@ import matplotlib.pyplot as plt
 import matplotlib.dates
 from datetime import datetime
 
-omit_empty = True
+omit_final = True
+omit_empty = False
 tag1 = 'vaginal'
 tag2 = 'anal'
 tag3 = 'oral'
@@ -14,11 +15,12 @@ tag6 = 'handjob'
 tag7 = 'cunnilingus'
 print('Loading JSON...')
 directory = 'C:/Scripts/Python/[adjective][species]/'
-with open('{}JSON/e621-total-2021-10-25-a.json'.format(directory), 'r') as f:
+with open('{}JSON/tag-out.json'.format(directory), 'rb') as f:
 	data = json.load(f)
 
 	print('Counting...')
 	dic = {}
+	#run = 0
 	for key in data:
 		y = key['created_at'].split('-')[0]
 		m = key['created_at'].split('-')[1]
@@ -33,7 +35,10 @@ with open('{}JSON/e621-total-2021-10-25-a.json'.format(directory), 'r') as f:
 				dic['{}'.format(created_at)][word] = 1
 			else:
 				dic['{}'.format(created_at)][word] += 1
+		#run += 1
+		#print(run)
 
+	print('Listing...')
 	#with open('{}'.format(directory), 'w') as o:
 	lst = []
 	for key in dic:
@@ -65,12 +70,14 @@ with open('{}JSON/e621-total-2021-10-25-a.json'.format(directory), 'r') as f:
 			r7 = dic[key]['{}'.format(tag5)] #result 4
 		except:
 			r7 = 0
-		print('{}: {}-{}, {}-{}'.format(key, tag1, r1, tag2, r2, tag3, r3, tag4, r4, tag5, r5, tag6, r6, tag7, r7))
+		print('{}: {}-{}, {}-{}, {}-{}, {}-{}, {}-{}, {}-{}, {}-{}'.format(key, tag1, r1, tag2, r2, tag3, r3, tag4, r4, tag5, r5, tag6, r6, tag7, r7))
 		tr = (key, r1, r2, r3, r4, r5, r6, r7) #tupled result
 		lst.append(tr)
 		
 	print('Plotting Popularity...')
 	df = pd.DataFrame(lst, columns = ['Date', '{}'.format(tag1), '{}'.format(tag2), '{}'.format(tag3), '{}'.format(tag4), '{}'.format(tag5), '{}'.format(tag6), '{}'.format(tag7)])
+	if omit_final == True:
+		df = df.iloc[1:, :]
 	df['Date'] = pd.to_datetime(df['Date'])
 	df = df.sort_values(by=['Date'], ascending=True)
 	if omit_empty == True:
@@ -87,3 +94,4 @@ with open('{}JSON/e621-total-2021-10-25-a.json'.format(directory), 'r') as f:
 	plt.xticks(rotation=60)
 	plt.legend()
 	plt.savefig('{}{}_{}_{}_{}_{}_{}_{}_plot.png'.format(directory, tag1, tag2, tag3, tag4, tag5, tag6, tag7), dpi=300, bbox_inches='tight') #transparent=True
+	
