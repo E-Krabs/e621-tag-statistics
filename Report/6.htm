@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Report 4</title>
+<title>Report 2</title>
 <link rel="icon" type="image/x-icon" href="https://e621.net/favicon.ico">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,6 +14,12 @@ body {
 	margin: 0;
 	font-family: Arial, Helvetica, sans-serif;
 }
+
+@font-face {
+    font-family: Bat;
+    src: url("/e621-json-dump/Font/Bat.ttf");
+}
+	
 /* Style the header */
 .header {
   background-color: #f1f1f1;
@@ -82,6 +88,10 @@ body {
 	overflow-x: hidden;
 }
 
+.sidenav_current {
+	background-color: #ddd;
+	color: black;
+}
 
 /* Side navigation links */
 .sidenav a {
@@ -121,25 +131,24 @@ body {
 
 <div class="content">
 	<div class="header">
-		<h2>e621 Data</h2>
+		<h2 style="font-family: Bat">e621 Data</h2>
 	</div>
 		
 	<div class="col-container">
 	  <div class="col" style="background:#A0999B">
 	  	<center>
-	    <h2>Relative Popularity of Basic Sex Acts</h2>
-	    <img src="/e621-json-dump/Report/vaginal_anal_oral_fellatio_fingering_handjob_cunnilingus_plot.png" style="max-height:65%; max-width:65%;">
-	    <p><code>omit_final</code></p>
+	    <h2>Stolas's Top Tags (20)</h2>
+	    <img src="/e621-json-dump/Report/stolas_(helluva_boss)_popular_tags.png" style="max-height:65%; max-width:65%;">
+	    <p><code>omit_empty & omit_final</code></p>
+	    <p>If a post has Stolas in it, count it's general tags.</p>
 	  </div>
 	</div>
 
 	<div class="footer">
-		<p>Data provided via the <a href="https://e621.net/post/index.json">e621 API</a> | <a href="https://github.com/E-Krabs/e621-json-dump">Github</a></p> 
-		<p>Expaned on "<a href="https://explore621.net">explore621</a>" by <a href="https://adjectivespecies.com/">[adjective][species]</a> licensed under CC BY-NC-SA. Project source is licensed under the <a href="https://github.com/E-Krabs/e621-json-dump/blob/main/LICENSE">MIT License</a></p>
+		<p>Expaned upon "<a href="https://explore621.net">explore621</a>" by <a href="https://adjectivespecies.com/">[adjective][species]</a> licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA</a>. Project source is licensed under the <a href="https://github.com/E-Krabs/e621-json-dump/blob/main/LICENSE">MIT License</a></p>
+		<p>This project is not affiliated with e621 or its creators. <a href="https://github.com/E-Krabs/e621-json-dump">View on Github</a> or <a href="https://github.com/adjspecies/explore621">View Original</a>.</p>
 	</div>
 </div>
 
 </body>
 </html>
-
-
