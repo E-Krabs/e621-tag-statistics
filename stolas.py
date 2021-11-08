@@ -16,13 +16,13 @@ with open('{}JSON/tag-out.json'.format(directory), 'r') as f:
 	for key in data:
 		general = key['tags']['general']
 		character = key['tags'['character']
-    for item in character:
-      if item == tag1:
-        for word in general:
-          if word not in dic:
-            dic[word] = 1
-          else:
-            dic[word] += 1
+    		for item in character:
+      			if item == tag1:
+      				for word in general:
+          				if word not in dic:
+            					dic[word] = 1
+          				else:
+            					dic[word] += 1
 
   word_counter = collections.Counter(dic)
 	with open('{}{}_popular_tags.txt'.format(directory, tag1), 'w', encoding='utf-8') as o:
