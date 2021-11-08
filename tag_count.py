@@ -39,7 +39,7 @@ with open('{}JSON/tag-out.json'.format(directory), 'r') as f:
 	size_tb = size_b // 1099511627776
 
 	print('Plotting Ratings...')
-	plt.barh(y, x)
+	plt.barh(y, x, color='r', color='k')
 	plt.title('Total Posts: {} ({}TB)'.format(run, size_tb))
 	plt.ticklabel_format(axis='x', style='plain')
 	#plt.show()
