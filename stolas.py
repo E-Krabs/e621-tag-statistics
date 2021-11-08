@@ -17,7 +17,7 @@ with open('{}JSON/tag-out.json'.format(directory), 'r') as f:
 		general = key['tags']['general']
 		character = key['tags'['character']
     for item in character:
-      if item == 'stolas_(helluva_boss)':
+      if item == tag1:
         for word in general:
           if word not in dic:
             dic[word] = 1
