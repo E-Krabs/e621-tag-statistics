@@ -9,7 +9,7 @@ This project fetches data from e621 provided via the <a href="https://e621.net/p
 
 <hr>
 <ul>
-  <li><code>fetchall.py</code> Dumps https://e621.net/posts.json. Dumps as much as it can (~3,001,695 posts). Takes ~5.2 hours to complete.<br>
+  <li><code>fetchall.py</code> Dumps https://e621.net/posts.json. Dumps as much as it can (~2.5mil posts). Takes ~5.2 hours to complete.<br>
 
   <li><code>tag_export.py</code> Exports tag data from the huge JSON file to a smaller file for easier interpretation.<br></li>
   <li><code>tag_count.py</code> Plots tag data. (Artist, General, Species, Characters, etc.)<br></li>
