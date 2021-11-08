@@ -5,11 +5,11 @@ Scripts to analyze the furry fandom through the content it produces and consumes
 Every image on e621 must be tagged with info describing what's in it (characters, artist, acts, etc.). Using this information provided via the <a href="https://e621.net/posts.json">e621 API</a>, we can plot the popularity of something in furry media.
 
 <h3><b>Fetching Data</b></h3>
-This project fetches data from e621 provided via the <a href="https://e621.net/posts.json">e621 API</a>. <code>main.py</code> collects as much data as it can. This opperation can take a few hours, because API requests are limited to 2 per second. But we make requests only once per second to avoid a 503 (too many requests). Every request returns 320 posts. The script writes the returned results to a JSON file (~4.5GB) for later analysis.
+This project fetches data from e621 provided via the <a href="https://e621.net/posts.json">e621 API</a>. <code>fetchall.py</code> collects as much data as it can. This opperation can take a few hours, because API requests are limited to 2 per second. But we make requests only once per second to avoid a 503 (too many requests). Every request returns 320 posts. The script writes the returned results to a JSON file (~4.5GB) for later analysis.
 
 <hr>
 <ul>
-  <li><code>main.py</code> Dumps https://e621.net/posts.json. Dumps as much as it can (~3,001,695 posts). Takes ~5.2 hours to complete.<br>
+  <li><code>fetchall.py</code> Dumps https://e621.net/posts.json. Dumps as much as it can (~3,001,695 posts). Takes ~5.2 hours to complete.<br>
 
   <li><code>tag_export.py</code> Exports tag data from the huge JSON file to a smaller file for easier interpretation.<br></li>
   <li><code>tag_count.py</code> Plots tag data. (Artist, General, Species, Characters, etc.)<br></li>
@@ -32,7 +32,7 @@ There's a lot of information that gets writen (~4.5GB). <code>json.load()</code>
 
 <h3><b>TODO:</b></h3>
 <ul>
-  <li>Optimize <code>main.py</code>, so it won't take a day long to fetch. I think it's <code>json.dumps()</code></li>
+  <li>Optimize <code>fetchall.py</code>, so it won't take a day long to fetch. I think it's <code>json.dumps()</code></li>
   <li>Find source of random 501s in <code>main.py</code></li>
   <li>✓ <strike>Extract< <code>created_at</code> and <code>tags</code> to plot popularity of a tag over a time period.</strike></li>
   <b>[++++++++++] 100%</b><br></li>
