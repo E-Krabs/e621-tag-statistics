@@ -77,6 +77,7 @@ a:active {
 
 /* Style the footer */
 .footer {
+  content: 'CONTENT_TEST';
   background: rgba(128, 128, 128, 0.2); /* #f1f1f1 241, 241, 241, .2*/
   padding: 10px;
   margin-top: 16px;
