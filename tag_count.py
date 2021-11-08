@@ -11,11 +11,12 @@ directory = 'C:/Scripts/Python/[adjective][species]/'
 with open('{}JSON/tag-out.json'.format(directory), 'r') as f:
 	data = json.load(f)
 
+	print('Counting...')
 	s = 0
 	q = 0
 	e = 0
-	y = []
-	x = ['safe', 'questionable', 'explicit']
+	x = []
+	y = ['safe', 'questionable', 'explicit']
 	for key in data:
 		rating = key['rating']
 		for word in rating:
@@ -25,10 +26,46 @@ with open('{}JSON/tag-out.json'.format(directory), 'r') as f:
 				q += 1
 			elif word == 'e':
 				e += 1
-	y.append(s)
-	y.append(q)
-	y.append(e)
+	x.append(s)
+	x.append(q)
+	x.append(e)
+
+	size_b = 0
+	run = 0
+	for key in data:
+		size = key['size']
+		size_b += size
+		run += 1
+	size_tb = size_b // 1099511627776
+
+	print('Plotting...')
 	plt.barh(y, x)
+	plt.title('Total Posts: {} ({}TB)'.format(run, size_tb))
+	plt.ticklabel_format(axis='x', style='plain')
+	#plt.show()
+	plt.savefig('{}rating_plot.png'.format(directory), dpi=300, bbox_inches='tight') #transparent=True
+
+	dic = {}
+	for key in data:
+		y = key['created_at'].split('-')[0]
+		if y not in dic:
+			dic[y] = 1
+		else:
+			dic[y] += 1
+	word_counter = collections.Counter(dic)
+	with open('{}posts_per_year_count.txt'.format(directory), 'w', encoding='utf-8') as o:
+		for word, count in word_counter.most_common():
+			o.write('{0}: {1}\n'.format(word, count))
+
+	print('Plotting Posts Per Year...')
+	lst = word_counter.most_common()
+	df = pd.DataFrame(lst, columns = ['Year', 'Count'])
+	df = df.sort_values(by=['Year'], ascending=True)
+	df.plot(x='Year',y='Count')
+	plt.ticklabel_format(axis='y', style='plain')
+	#plt.title('Posts Per Year')
+	#plt.show()
+	plt.savefig('{}posts_per_year_plot.png'.format(directory), dpi=300, bbox_inches='tight') #transparent=True
 
 	dic = {}
 	for key in data:
