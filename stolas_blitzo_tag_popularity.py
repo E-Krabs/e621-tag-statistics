@@ -16,12 +16,16 @@ with open('{}JSON/tag-out.json'.format(directory), 'r') as f:
 
 	print('Counting...')
 	dic = {}
+	characters = []
 	for key in data:
 		general = key['tags']['general']
 		character = key['tags']['character']
-		for item in character:
-			if item == tag1 and item == tag2:
-				for word in general:
+		for item in character: #add the charcters to a list and append list to a dict, then count how many times tag1 and tag2 appear in the same list.
+			characters.append(item)
+		dic.append(characters)
+	for lst in dic:
+		if tag1 in lst and tag2 in lst: #if stolas and blitzo in list
+			for word in general:
 					if word not in dic:
 						dic[word] = 1
 					else:
