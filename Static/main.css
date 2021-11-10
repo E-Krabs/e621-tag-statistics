@@ -42,6 +42,21 @@ a:active {
   src: url("/e621-json-dump/Static/Font/BungeeShade-Regular.ttf");
 }
 
+@font-face {
+  font-family: MatrixZone;
+  src: url("/e621-json-dump/Static/Static/Font/Matrix_Zone.ttf");
+}
+
+@font-face {
+  font-family: Bat;
+  src: url("/e621-json-dump/Static/Static/Font/Bat.ttf");
+}
+
+@font-face {
+  font-family: Game Of Squids;
+  src: url("/e621-json-dump/Static/Static/Font/Game Of Squids.ttf");
+}
+
 /* Style the header */
 .header {
   /* background: rgba(128, 128, 128, 0.2); #f1f1f1 #020F23 #152F56
