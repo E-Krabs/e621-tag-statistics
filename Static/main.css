@@ -44,17 +44,17 @@ a:active {
 
 @font-face {
   font-family: MatrixZone;
-  src: url("/e621-json-dump/Static/Static/Font/Matrix_Zone.ttf");
+  src: url("/e621-json-dump/Static/Font/Matrix_Zone.ttf");
 }
 
 @font-face {
   font-family: Bat;
-  src: url("/e621-json-dump/Static/Static/Font/Bat.ttf");
+  src: url("/e621-json-dump/Static/Font/Bat.ttf");
 }
 
 @font-face {
   font-family: Game Of Squids;
-  src: url("/e621-json-dump/Static/Static/Font/Game Of Squids.ttf");
+  src: url("/e621-json-dump/Static/Font/Game Of Squids.ttf");
 }
 
 /* Style the header */
