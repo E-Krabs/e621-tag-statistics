@@ -17,8 +17,8 @@ with open('{}JSON/tag-out.json'.format(directory), 'r') as f:
 	print('Counting...')
 	dic = {}
 	for key in data:
-		general = key['tag']['general']
-		character = key['tag']['character']
+		general = key['tags']['general']
+		character = key['tags']['character']
 		if tag1 in character and tag2 in character:
 			for word in general:
 				if word not in dic:
