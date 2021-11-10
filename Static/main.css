@@ -67,6 +67,11 @@ a:active {
   src: url("/e621-json-dump/Static/Font/Zootopia.ttf");
 }
 
+@font-face {
+  font-family: Bold Dragon;
+  src: url("/e621-json-dump/Static/Font/Bold_Dragon.ttf");
+}
+
 /* Style the header */
 .header {
   /* background: rgba(128, 128, 128, 0.2); #f1f1f1 #020F23 #152F56
