@@ -14,3 +14,6 @@ https://fonts.google.com/specimen/Bungee+Shade
 
 Wallpoet-Regular:
 https://fonts.google.com/specimen/Wallpoet
+
+Bold Dragon:
+https://www.dafont.com/bold-dragon.font
