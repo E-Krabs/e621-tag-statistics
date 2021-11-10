@@ -6,7 +6,6 @@ plt.style.use(['dark_background'])
 
 display = 20 #int(input('Tags to Plot: '))
 print('Loading JSON...')
-
 directory = 'C:/Scripts/Python/[adjective][species]/'
 with open('{}JSON/tag-out.json'.format(directory), 'r') as f:
 	data = json.load(f)
@@ -38,7 +37,7 @@ with open('{}JSON/tag-out.json'.format(directory), 'r') as f:
 		run += 1
 	size_tb = size_b // 1099511627776
 
-	print('Plotting Ratings...')
+	print('Plotting...')
 	plt.barh(y, x, color='r', color='k')
 	plt.title('Total Posts: {} ({}TB)'.format(run, size_tb))
 	plt.ticklabel_format(axis='x', style='plain')

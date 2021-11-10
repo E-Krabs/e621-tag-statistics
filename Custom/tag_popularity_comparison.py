@@ -3,14 +3,20 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import matplotlib.dates
 from datetime import datetime
+plt.style.use(['dark_background'])
 
-omit_final = True
-omit_empty = True
-tag1 = 'angel_dust'
-tag2 = 'charlie_(hazbin_hotel)'
-tag3 = 'alastor_(hazbin_hotel)'
-tag4 = 'husk_(hazbin_hotel)'
-tag5 = 'sir_pentious_(hazbin_hotel)'
+tag1 = input('First Tag to Compare: ')
+tag2 = input('Second Tag to Compare: ')
+omit_f = input('Omit Final? (y, n):')
+omit_e = input('Omit empty? (y, n):')
+if omit_f == 'y':
+	omit_final = True
+else:
+	omit_final = False
+if omit_e == 'y':
+	omit_empty = True
+else:
+	omit_empty = False
 print('Loading JSON...')
 directory = 'C:/Scripts/Python/[adjective][species]/'
 with open('{}JSON/tag-out.json'.format(directory), 'r') as f:
@@ -25,7 +31,7 @@ with open('{}JSON/tag-out.json'.format(directory), 'r') as f:
 
 		if created_at not in dic:
 			dic[created_at] = {}
-		general = key['tags']['character']
+		general = key['tags']['general']
 
 		for word in general:
 			if word not in dic['{}'.format(created_at)]:
@@ -44,24 +50,12 @@ with open('{}JSON/tag-out.json'.format(directory), 'r') as f:
 			r2 = dic[key]['{}'.format(tag2)] #result 2
 		except:
 			r2 = 0
-		try:
-			r3 = dic[key]['{}'.format(tag3)] #result 3
-		except:
-			r3 = 0
-		try:
-			r4 = dic[key]['{}'.format(tag4)] #result 4
-		except:
-			r4 = 0
-		try:
-			r5 = dic[key]['{}'.format(tag5)] #result 4
-		except:
-			r5 = 0
-		print('{}: {}-{}, {}-{}, {}-{}, {}-{}, {}-{}'.format(key, tag1, r1, tag2, r2, tag3, r3, tag4, r4, tag5, r5))
-		tr = (key, r1, r2, r3, r4, r5) #tupled result
+		print('{}: {}-{}, {}-{}'.format(key, tag1, r1, tag2, r2))
+		tr = (key, r1, r2) #tupled result
 		lst.append(tr)
 		
 	print('Plotting...')
-	df = pd.DataFrame(lst, columns = ['Date', '{}'.format(tag1), '{}'.format(tag2), '{}'.format(tag3), '{}'.format(tag4), '{}'.format(tag5)])
+	df = pd.DataFrame(lst, columns = ['Date', '{}'.format(tag1), '{}'.format(tag2)])
 	if omit_final == True:
 		df = df.iloc[1:, :]
 	df['Date'] = pd.to_datetime(df['Date'])
@@ -71,10 +65,7 @@ with open('{}JSON/tag-out.json'.format(directory), 'r') as f:
 		df = df[(dfe != 0).all(1)]
 	plt.plot(df['Date'], df['{}'.format(tag1)], color='g', label='{}'.format(tag1))
 	plt.plot(df['Date'], df['{}'.format(tag2)], color='r', label='{}'.format(tag2))
-	plt.plot(df['Date'], df['{}'.format(tag3)], color='b', label='{}'.format(tag3))
-	plt.plot(df['Date'], df['{}'.format(tag4)], color='m', label='{}'.format(tag4))
-	plt.plot(df['Date'], df['{}'.format(tag5)], color='y', label='{}'.format(tag5))
-	#plt.title('Hazbin Hotel Character Popularity')
+	plt.title('Popularity of {} & {}'.format(tag1, tag2))
 	plt.xticks(rotation=60)
 	plt.legend()
-	plt.savefig('{}{}_{}_{}_{}_{}_plot.png'.format(directory, tag1, tag2, tag3, tag4, tag5), dpi=300, bbox_inches='tight') #transparent=True
+	plt.savefig('{}{}_{}_plot.png'.format(directory, tag1, tag2), dpi=300, bbox_inches='tight') #transparent=True

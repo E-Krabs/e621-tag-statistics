@@ -27,7 +27,7 @@ with open('{}JSON/tag-out.json'.format(directory), 'r') as f:
 					dic[word] += 1
 	
 	word_counter = collections.Counter(dic)
-	with open('{}{}_popular_tags.txt'.format(directory, tag1), 'w', encoding='utf-8') as o:
+	with open('{}{}_{}_popular_tags.txt'.format(directory, tag1, tag2), 'w', encoding='utf-8') as o:
 		for word, count in word_counter.most_common():
 			o.write('{0}: {1}\n'.format(word, count))
 	
@@ -38,19 +38,3 @@ with open('{}JSON/tag-out.json'.format(directory), 'r') as f:
 	#plt.title('Stolas & Blitzo\'s Popular Tags')
 	#plt.show()
 	plt.savefig('{}{}_{}_popular_tags.png'.format(directory, tag1, tag2), dpi=300, bbox_inches='tight') #transparent=True
-	#penis penis penis penis pp enlargement pills cum in ur mum\'s bum
-	
-	'''
-	for key in data:
-		characters = []
-		general = key['tags']['general']
-		character = key['tags']['character']
-		for item in character: #add the charcters to a list and append list to a list, then count how many times tag1 and tag2 appear in the same list.
-			characters.append(item)
-			lst.append(characters)
-
-	dic = {}
-	for item in lst:
-		if tag1 in item and tag2 in item: #if stolas and blitzo in list
-				for key in data:
-	'''

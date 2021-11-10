@@ -3,8 +3,8 @@ from requests.auth import HTTPBasicAuth
 import time
 import json
 
-directory = 'C:/Scripts/Python/[adjective][species]/'
 print("Loading JSON...")
+directory = 'C:/Scripts/Python/[adjective][species]/'
 with open('{}JSON/e621-total-2021-11-05-a.json'.format(directory), 'rb') as f:
 	data = json.load(f)
 

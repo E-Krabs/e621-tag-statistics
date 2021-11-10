@@ -75,7 +75,7 @@ with open('{}JSON/tag-out.json'.format(directory), 'r') as f:
 		tr = (key, r1, r2, r3, r4, r5) #tupled result
 		lst.append(tr)
 		
-	print('Plotting Popularity...')
+	print('Plotting...')
 	df = pd.DataFrame(lst, columns = ['Date', '{}'.format(tag1), '{}'.format(tag2), '{}'.format(tag3), '{}'.format(tag4), '{}'.format(tag5)])
 	if omit_final == True:
 		df = df.iloc[1:, :]

@@ -20,7 +20,6 @@ with open('{}JSON/tag-out.json'.format(directory), 'rb') as f:
 
 	print('Counting...')
 	dic = {}
-	#run = 0
 	for key in data:
 		y = key['created_at'].split('-')[0]
 		m = key['created_at'].split('-')[1]
@@ -35,10 +34,7 @@ with open('{}JSON/tag-out.json'.format(directory), 'rb') as f:
 				dic['{}'.format(created_at)][word] = 1
 			else:
 				dic['{}'.format(created_at)][word] += 1
-		#run += 1
-		#print(run)
 
-	print('Listing...')
 	#with open('{}'.format(directory), 'w') as o:
 	lst = []
 	for key in dic:
@@ -74,7 +70,7 @@ with open('{}JSON/tag-out.json'.format(directory), 'rb') as f:
 		tr = (key, r1, r2, r3, r4, r5, r6, r7) #tupled result
 		lst.append(tr)
 		
-	print('Plotting Popularity...')
+	print('Plotting...')
 	df = pd.DataFrame(lst, columns = ['Date', '{}'.format(tag1), '{}'.format(tag2), '{}'.format(tag3), '{}'.format(tag4), '{}'.format(tag5), '{}'.format(tag6), '{}'.format(tag7)])
 	if omit_final == True:
 		df = df.iloc[1:, :]
