@@ -38,7 +38,7 @@ a:active {
 
 @font-face {
   font-family: Strange Path;
-  src: url("file:///C:/Scripts/Python/[adjective][species]/Static/Font/Strange_Path.ttf");
+  src: url("/e621-json-dump/Static/Font/Strange_Path.ttf");
 }
 
 @font-face {
@@ -64,7 +64,7 @@ a:active {
 .col {
   flex: 1;
   padding: 16px;
-  /*background: #152F56; /* #284980 */
+  background: #191524; /* #284980 */
 }
 	
 /* Create two equal columns that floats next to each other */
