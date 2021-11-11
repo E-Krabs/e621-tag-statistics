@@ -78,7 +78,7 @@ a:active {
   padding: 10px;
   height: 33.33%; /* Should be removed. Only for demonstration */
 }	
-	
+
 /* Clear floats after the columns */
 .row:after {
   content: "";
