@@ -5,7 +5,8 @@
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
-  background-image: repeating-linear-gradient(90deg, #E93E34, #E93E34 60px, #FD9850 60px, #FD9850 120px);
+  background-image: url('/e621-json-dump/Static/hb_body.png');
+  background-color: #A4002C;
 }
 
 h2 {
