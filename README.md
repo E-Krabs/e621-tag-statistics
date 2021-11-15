@@ -41,6 +41,11 @@ into memory. I've heard of <code>ijson</code> but haven't given it a try.
   <li>✓ <strike>omit_final - Omit the final entry (which might skew the line low when run during the begining of the month).</strike></li>
   <li>✓ <strike>More attrative plots.</strike></li>
   <li>Implement argparse</li>
+  <li>More Reports:</li>
+    <ul>
+      <li>How many liters/year based on <code>cum</code>?</li>
+      <li>Squanchee vs Birdman</li>
+  </ul>
 </ul>
 <br>
 Expaned upon "<a href="https://explore621.net">explore621</a>" by <a href="https://adjectivespecies.com/">[adjective][species]</a> licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA</a>. Project source is licensed under the <a href="https://github.com/E-Krabs/e621-json-dump/blob/main/LICENSE">MIT License</a>
