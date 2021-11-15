@@ -34,17 +34,19 @@ into memory. I've heard of <code>ijson</code> but haven't given it a try.
 <h3><b>TODO:</b></h3>
 <ul>
   <li>Optimize <code>fetchall.py</code>, so it won't take a day long to fetch. I think <code>json.dumps()</code> is the problem.</li>
-  <li>Find source of random 501s in <code>main.py</code></li>
+  <li>Find source of random 501s in <code>fetchall.py</code></li>
   <li>✓ <strike>Extract< <code>created_at</code> and <code>tags</code> to plot popularity of a tag over a time period.</strike></li>
   <li>✓ <strike>Create admin dashboard</strike></li>
   <li>✓ <strike>omit_empty - Omit entries with value of 0.</strike></li>
   <li>✓ <strike>omit_final - Omit the final entry (which might skew the line low when run during the begining of the month).</strike></li>
   <li>✓ <strike>More attrative plots.</strike></li>
   <li>Implement argparse</li>
+  <li>Upload Data-Set</li>
   <li>More Reports:</li>
     <ul>
-      <li>How many liters/year based on <code>cum</code>?</li>
+      <li>How many liters/year based on <code>cum</code>? (Cum Counter TM)</li>
       <li>Squanchee vs Birdman</li>
+      <li>etc.</li>
   </ul>
 </ul>
 <br>
