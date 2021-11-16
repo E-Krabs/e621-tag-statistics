@@ -72,6 +72,11 @@ a:active {
   src: url("/e621-json-dump/Static/Font/Bold_Dragon.ttf");
 }
 
+@font-face {
+  font-family: Wallpoet;
+  src: url("/e621-json-dump/Static/Font/Wallpoet-Regular.ttf");
+}
+
 /* Style the header */
 .header {
   /* background: rgba(128, 128, 128, 0.2); #f1f1f1 #020F23 #152F56
