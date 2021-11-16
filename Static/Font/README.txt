@@ -1,4 +1,3 @@
-I do not own any of these fonts. I am using these fonts for personal use.
 
 Matrix Zone:
 https://www.dafont.com/matrix-zone.font
