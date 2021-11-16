@@ -10,7 +10,6 @@ This project fetches data from e621 provided via the <a href="https://e621.net/p
 <hr>
 <ul>
   <li><code>fetchall.py</code> Dumps https://e621.net/posts.json. Dumps as much as it can (~2.5mil posts). Takes ~5.2 hours to complete.<br>
-
   <li><code>tag_export.py</code> Exports tag data from the huge JSON file to a smaller file for easier interpretation. (less memory intensive)<br></li>
   <li><code>tag_count.py</code> Plots tag data. (Artist, General, Species, Characters, etc.)<br></li>
   <li><code>/Custom/tag_popularity.py</code> Compare two general tags.<br></li>
@@ -44,9 +43,8 @@ into memory. I've heard of <code>ijson</code> but haven't given it a try.
   <li>Upload Data-Set</li>
   <li>More Reports:</li>
     <ul>
-      <li>How many liters/year based on <code>cum</code>? (Cum Counter TM)</li>
+      <li>✓ <strike>How many liters/year based on <code>cum</code>? (Cum Counter TM)</strike></li>
       <li>Squanchee vs Birdman</li>
-      <li>etc.</li>
   </ul>
 </ul>
 <br>
