@@ -38,7 +38,7 @@ a:active {
 } 
 	
 @font-face {
-  font-family: BungeeShade-Regular;
+  font-family: BungeeShade;
   src: url("/e621-json-dump/Static/Font/BungeeShade-Regular.ttf");
 }
 
@@ -75,6 +75,11 @@ a:active {
 @font-face {
   font-family: Wallpoet;
   src: url("/e621-json-dump/Static/Font/Wallpoet-Regular.ttf");
+}
+
+@font-face {
+  font-family: Paulistanalpe;
+  src: url("/e621-json-dump/Static/Font/Paulistanalpe-Regular.ttf");
 }
 
 /* Style the header */
