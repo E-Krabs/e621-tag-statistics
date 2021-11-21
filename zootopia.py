@@ -3,6 +3,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import matplotlib.dates
 from datetime import datetime
+plt.style.use(['dark_background'])
 
 omit_final = True
 omit_empty = False

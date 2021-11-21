@@ -37,13 +37,14 @@ with open('{}JSON/tag-out.json'.format(directory), 'r') as f:
 		run += 1
 	size_tb = size_b // 1099511627776
 
-	print('Plotting...')
-	plt.barh(y, x, color='r', color='k')
+	print('Plotting Rating...')
+	plt.barh(y, x)
 	plt.title('Total Posts: {} ({}TB)'.format(run, size_tb))
 	plt.ticklabel_format(axis='x', style='plain')
 	#plt.show()
 	plt.savefig('{}rating_plot.png'.format(directory), dpi=300, bbox_inches='tight') #transparent=True
 
+	print('Counting...')
 	dic = {}
 	for key in data:
 		y = key['created_at'].split('-')[0]
@@ -66,6 +67,7 @@ with open('{}JSON/tag-out.json'.format(directory), 'r') as f:
 	#plt.show()
 	plt.savefig('{}posts_per_year_plot.png'.format(directory), dpi=300, bbox_inches='tight') #transparent=True
 
+	print('Counting...')
 	dic = {}
 	for key in data:
 		general = key['tags']['general']
@@ -76,9 +78,11 @@ with open('{}JSON/tag-out.json'.format(directory), 'r') as f:
 			else:
 				dic[word] += 1
 	word_counter = collections.Counter(dic)
-	with open('{}general_tag_count.txt'.format(directory), 'w', encoding='utf-8') as o:
+	with open('{}general_tag_count.htm'.format(directory), 'w', encoding='utf-8') as o:
+		o.write('<!DOCTYPE html><html><style>body{background-color:white;}table{width="100%";}table,th,td{border:1px solid black;}</style><body><table><tr><th>General Tag</th><th>Count</th></tr>')
 		for word, count in word_counter.most_common():
-			o.write('{0}: {1}\n'.format(word, count))
+			o.write('<tr><td>{0}</td><td>{1}</td></tr>'.format(word, count))
+		o.write('</table></body></html>')
 
 	print('Plotting General...')
 	lst = word_counter.most_common(display)
@@ -89,6 +93,7 @@ with open('{}JSON/tag-out.json'.format(directory), 'r') as f:
 	#plt.show()
 	plt.savefig('{}general_tag_plot.png'.format(directory), dpi=300, bbox_inches='tight') #transparent=True
 
+	print('Counting...')
 	dic = {}
 	for key in data:
 		species = key['tags']['species']
@@ -99,9 +104,11 @@ with open('{}JSON/tag-out.json'.format(directory), 'r') as f:
 			else:
 				dic[word] += 1
 	word_counter = collections.Counter(dic)
-	with open('{}species_tag_count.txt'.format(directory), 'w', encoding='utf-8') as o:
+	with open('{}species_tag_count.htm'.format(directory), 'w', encoding='utf-8') as o:
+		o.write('<!DOCTYPE html><html><style>body{background-color:white;}table{width="100%";}table,th,td{border:1px solid black;}</style><body><table><tr><th>Species Tag</th><th>Count</th></tr>')
 		for word, count in word_counter.most_common():
-			o.write('{0}: {1}\n'.format(word, count))
+			o.write('<tr><td>{0}</td><td>{1}</td></tr>'.format(word, count))
+		o.write('</table></body></html>')
 
 	print('Plotting Species...')
 	lst = word_counter.most_common(display)
@@ -112,6 +119,7 @@ with open('{}JSON/tag-out.json'.format(directory), 'r') as f:
 	#plt.show()
 	plt.savefig('{}species_tag_plot.png'.format(directory), dpi=300, bbox_inches='tight') #transparent=True
 
+	print('Counting...')
 	dic = {}
 	for key in data:
 		character = key['tags']['character']
@@ -122,9 +130,11 @@ with open('{}JSON/tag-out.json'.format(directory), 'r') as f:
 			else:
 				dic[word] += 1
 	word_counter = collections.Counter(dic)
-	with open('{}character_tag_count.txt'.format(directory), 'w', encoding='utf-8') as o:
+	with open('{}character_tag_count.htm'.format(directory), 'w', encoding='utf-8') as o:
+		o.write('<!DOCTYPE html><html><style>body{background-color:white;}table{width="100%";}table,th,td{border:1px solid black;}</style><body><table><tr><th>Character Tag</th><th>Count</th></tr>')
 		for word, count in word_counter.most_common():
-			o.write('{0}: {1}\n'.format(word, count))
+			o.write('<tr><td>{0}</td><td>{1}</td></tr>'.format(word, count))
+		o.write('</table></body></html>')
 
 	print('Plotting Characters...')
 	lst = word_counter.most_common(display)
@@ -134,6 +144,7 @@ with open('{}JSON/tag-out.json'.format(directory), 'r') as f:
 	#plt.show()
 	plt.savefig('{}character_tag_plot.png'.format(directory), dpi=300, bbox_inches='tight') #transparent=True
 
+	print('Counting...')
 	stopwords = ['conditional_dnp', 'unknown_artist']
 	dic = {}
 	for key in data:
@@ -146,9 +157,11 @@ with open('{}JSON/tag-out.json'.format(directory), 'r') as f:
 				else:
 					dic[word] += 1
 	word_counter = collections.Counter(dic)
-	with open('{}artist_tag_count.txt'.format(directory), 'w', encoding='utf-8') as o:
+	with open('{}artist_tag_count.htm'.format(directory), 'w', encoding='utf-8') as o:
+		o.write('<!DOCTYPE html><html><style>body{background-color:white;}table{width="100%";}table,th,td{border:1px solid black;}</style><body><table><tr><th>Artist Tag</th><th>Count</th></tr>')
 		for word, count in word_counter.most_common():
-			o.write('{0}: {1}\n'.format(word, count))
+			o.write('<tr><td>{0}</td><td>{1}</td></tr>'.format(word, count))
+		o.write('</table></body></html>')
 
 	print('Plotting Artists...')
 	lst = word_counter.most_common(display)
