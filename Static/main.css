@@ -125,7 +125,6 @@ object {
 
 /* Style the footer */
 .footer {
-  content: 'CONTENT_TEST';
   background: rgba(128, 128, 128, 0.2); /* #f1f1f1 241, 241, 241, .2*/
   padding: 10px;
   margin-top: 16px;
@@ -176,7 +175,6 @@ object {
   padding-right: 20px;
 }
 
-/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
 @media (max-width: 800px) {
   .col {
   	padding: 0px;
