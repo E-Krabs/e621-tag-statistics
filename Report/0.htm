@@ -13,6 +13,7 @@
 	<a href="../index.htm">Dashboard</a>
 	<hr>
 	<a href="/e621-json-dump/Report/1.htm">Zootopia's Influence</a>
+	<a href="/e621-json-dump/Report/10.htm">Jurassic Park</a>
 	<a href="/e621-json-dump/Report/2.htm">Helluva Boss</a>
 	<a href="/e621-json-dump/Report/5.htm">Hazbin Hotel</a>
 	<a href="/e621-json-dump/Report/3.htm">Popular Ponies</a>
@@ -33,11 +34,13 @@
 	  <div class="col">
 	  	<center>
 	    <h2>About</h2>
-<p>Scripts to analyze the furry fandom through the content it produces and consumes.
-Every image on e621 must be tagged with info describing what's in it (characters, artist, acts, etc.). Using this information provided via the <a href="https://e621.net/posts.json">e621 API</a>, we can plot the popularity of something in furry media.</p>
+		<p>Scripts to analyze the furry fandom through the content it produces and consumes. Every image on e621 must be tagged with info describing what's in it (characters, artist, acts, etc.). Using this information provided via the <a href="https://e621.net/posts.json">e621 API</a>, we can plot the popularity of something in furry media.</p>
 
-<h2>Fetching Data</h2>
-			<p>This project fetches data from e621 provided via the e621 API. <a href="https://github.com/E-Krabs/e621-json-dump/blob/main/fetchall.py"><code>fetchall.py</code></a> collects as much data as it can (~2.5mil posts). This opperation can take a few hours, because API requests are limited to 2 per second. But we make requests only once per second to avoid a 503 (too many requests). Every request returns 320 posts. The script writes the returned results to a JSON file (~4.5GB) for later analysis.</p>
+		<h2>Fetching Data</h2>
+		<p>This project fetches data from e621 provided via the e621 API. <a href="https://github.com/E-Krabs/e621-json-dump/blob/main/fetchall.py"><code>fetchall.py</code></a> collects as much data as it can (~2.5mil posts). This opperation can take a few hours, because API requests are limited to 2 per second. But we make requests only once per second to avoid a 503 (too many requests). Every request returns 320 posts. The script writes the returned results to a JSON file (~4.5GB) for later analysis.</p>
+
+		<h2>How It Works</h2>
+		<p>Everything is written in Python. We fetch our information using the <a href="https://docs.python-requests.org/en/latest/">requests library</a> and save it as JSON. We can then use pandas to create a dataframe from the JSON objects. We then plot the dataframe with <a href="https://matplotlib.org">matplotlib</a>.
 	  </div>
 	</div>
 
