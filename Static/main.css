@@ -162,6 +162,22 @@ object {
   display: block;
 }
 
+.no a {
+  color: white;
+  padding: 0px;
+  text-decoration: none;
+}
+
+.no li {
+  color: white;
+  padding: 0px;
+  text-decoration: none;
+}
+
+ul {
+  margin: 0px;
+}
+
 /* Change color on hover */
 .sidenav a:hover {
   background-color: #ddd;
