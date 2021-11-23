@@ -6,11 +6,11 @@ body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
   background-image: url('/e621-json-dump/Static/body.png');
-  background-color: #020f23; /* #152F56 */
+  background-color: #020f23;
 }
 
 h2 {
-  color: #B4C7D9; /* white */
+  color: #B4C7D9;
 }
 
 p {
@@ -104,7 +104,7 @@ object {
 .col {
   flex: 1;
   padding: 16px;
-  background: #152F56; /* #284980 */
+  background: #152F56;
 }
 
 /* Create two equal columns that floats next to each other */
