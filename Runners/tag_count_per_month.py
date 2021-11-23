@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 import matplotlib.dates
 from datetime import datetime
 from itertools import cycle
+import seaborn as sns
 plt.style.use(['dark_background'])
 colors = cycle(['blue', 'aqua', 'yellow', 'purple', 'pink', 'brown', 'grey', 'red', 'green', 'orange', 'white'])
 
@@ -18,8 +19,10 @@ while True:
 	if item == '':
 		break
 	tag_total.append(item)
-print(tag_total)
+tag_total = ['fox', 'human', 'dragon', 'domestic_dog', 'wolf', 'horse', 'domestic_cat', 'rabbit', 'bird', 'tiger', 'fish', 'lion', 'lizard', 'snake']
 #tag_total = ['canid', 'cetacean', 'feline', 'lagomorph', 'marsupial', 'mustelid', 'primate', 'rodent', 'skunk', 'viverrid']
+#print(tag_total)
+#print(len(tag_total))
 print('Loading JSON...')
 directory = 'C:/Scripts/Python/[adjective][species]/'
 with open('{}JSON/tag-out.json'.format(directory), 'r') as f:
@@ -75,11 +78,15 @@ with open('{}JSON/tag-out.json'.format(directory), 'r') as f:
 	if omit_empty == True:
 		dfe = df.loc[:, df.columns!='Date']
 		df = df[(dfe != 0).all(1)]
+
 	for tag in tag_total:
-		plt.plot(df['Date'], df['{}'.format(tag)], color=next(colors), label='{}'.format(tag))
-	#plt.title('Tag Popularity Comparison')
+		plt.plot(df['Date'], df['{}'.format(tag)], color=next(colors), linewidth='.5', label='{}'.format(tag))
+	#plt.title('Tag Count Comparison')
 	plt.xticks(rotation=60)
-	plt.legend()
+	if len(tag_total) >= 10:
+		plt.legend(bbox_to_anchor=(1.04,1), borderaxespad=0)
+	else:
+		plt.legend()
 	save_str = ''
 	for tag in tag_total:
 		save_str = save_str + tag + '_'
