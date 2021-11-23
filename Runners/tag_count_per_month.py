@@ -19,10 +19,9 @@ while True:
 	if item == '':
 		break
 	tag_total.append(item)
-tag_total = ['fox', 'human', 'dragon', 'domestic_dog', 'wolf', 'horse', 'domestic_cat', 'rabbit', 'bird', 'tiger', 'fish', 'lion', 'lizard', 'snake']
-#tag_total = ['canid', 'cetacean', 'feline', 'lagomorph', 'marsupial', 'mustelid', 'primate', 'rodent', 'skunk', 'viverrid']
-#print(tag_total)
-#print(len(tag_total))
+#tag_total = ['fox', 'human', 'dragon', 'domestic_dog', 'wolf', 'horse', 'domestic_cat', 'rabbit', 'bird', 'tiger', 'fish', 'lion', 'lizard', 'snake']
+#tag_total = ['canid', 'cetacean', 'felid', 'lagomorph', 'marsupial', 'mustelid', 'primate', 'rodent', 'skunk', 'rabbit', 'viverrid']
+#skunk and rabbit are on their own, bc they do not belong to a family on e621.
 print('Loading JSON...')
 directory = 'C:/Scripts/Python/[adjective][species]/'
 with open('{}JSON/tag-out.json'.format(directory), 'r') as f:
