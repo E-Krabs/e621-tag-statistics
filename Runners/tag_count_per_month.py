@@ -20,8 +20,10 @@ while True:
 		break
 	tag_total.append(item)
 #tag_total = ['fox', 'human', 'dragon', 'domestic_dog', 'wolf', 'horse', 'domestic_cat', 'rabbit', 'bird', 'tiger', 'fish', 'lion', 'lizard', 'snake']
-#tag_total = ['canid', 'cetacean', 'felid', 'lagomorph', 'marsupial', 'mustelid', 'primate', 'rodent', 'skunk', 'rabbit', 'viverrid']
-#skunk and rabbit are on their own, bc they do not belong to a family on e621.
+#tag_total = ['canid', 'cetacean', 'felid', 'equid', 'cervid', 'lagomorph', 'marsupial', 'mustelid', 'primate', 'rodent', 'skunk', 'viverrid']
+#skunks are alone as they are not in a family on e621
+#print(tag_total)
+#print(len(tag_total))
 print('Loading JSON...')
 directory = 'C:/Scripts/Python/[adjective][species]/'
 with open('{}JSON/tag-out.json'.format(directory), 'r') as f:
@@ -82,7 +84,7 @@ with open('{}JSON/tag-out.json'.format(directory), 'r') as f:
 		plt.plot(df['Date'], df['{}'.format(tag)], color=next(colors), linewidth='.5', label='{}'.format(tag))
 	#plt.title('Tag Count Comparison')
 	plt.xticks(rotation=60)
-	if len(tag_total) >= 10:
+	if len(tag_total) >= 13:
 		plt.legend(bbox_to_anchor=(1.04,1), borderaxespad=0)
 	else:
 		plt.legend()
