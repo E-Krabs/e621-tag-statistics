@@ -25,7 +25,7 @@ This project fetches data from e621 provided via the <a href="https://e621.net/p
 </ul>
 
 <h3><b>Memory:</b></h3>
-<b>Required:</b> > 32GB<br>
+<b>Required:</b> >= 32GB<br>
 There's a lot of information that gets writen (~4.5GB). <code>json.load()</code> loads the entire .json file into memory. Use <code>bigjson</code> in <code>tag_export.py</code> if your RAM < 64GB (You could squeeze the file into 32GB if you close all other applications). If your RAM < 32, ignore <code>tag_export.py</code> and use <code>bigjson</code> for everything. <code>bigjson</code> is <i>super</i> slow as compared to loading the entire file 
 into memory. I've heard of <code>ijson</code> but haven't given it a try. Also, putting it in a db would probally be better...
 
