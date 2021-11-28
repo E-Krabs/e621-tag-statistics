@@ -45,7 +45,8 @@ into memory. I've heard of <code>ijson</code> but haven't given it a try. Also, 
       <li>✓ <strike>How many liters/year based on <code>cum</code>? (Cum Counter TM)</strike></li>
       <li>✓ <strike>Species Explorer</strike></li>
       <li>✓ <strike>Jurassic Park Dino Dong</strike></li>
-      <li>Squanchee vs Birdman</li>
+      <li>Finish Species Explorer</li>
+  <li>Upload copyright tags</li>
   </ul>
 </ul>
 <br>
