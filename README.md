@@ -13,7 +13,7 @@ This project fetches data from e621 provided via the <a href="https://e621.net/p
   <li><code>tag_export.py</code> Exports tag data from the huge JSON file to a smaller file for easier interpretation. (less memory intensive)<br></li>
   <li><code>tag_count.py</code> Plots tag data. (Artist, General, Species, Characters, etc.)<br></li>
   <li><code>/Runners/tag_count_per_month.py</code> Compare any number of tags in 'general' and 'species', then plot.<br></li>
-  <li>Everything in <code>/Prefab/</code> are the scripts used for the reports. Results are in <code>/Reports</code></li>
+  <li>Everything in <code>/Prefab/</code> are the scripts used for the reports. Results are in <code>/Reports/</code></li>
 </ul>
 
 <h3><b>Requirements:</b></h3>
