@@ -46,6 +46,7 @@ There's a lot of information that gets writen (~4.5GB). <code>json.load()</code>
       <li>✓ <strike>Species Explorer</strike></li>
       <li>✓ <strike>Jurassic Park Dino Dong</strike></li>
       <li>Finish Species Explorer</li>
+      <li>✓ <strike>Count general tags in a comic pool</strike></li>
   <li>Upload copyright tags</li>
   </ul>
 </ul>
