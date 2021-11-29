@@ -19,8 +19,8 @@ with open('{}JSON/tag-out-p.json'.format(directory), 'r') as f:
 		general = key['tags']['general']
 		pools = key['pools']
 		for item in pools:
-			print(item)
-			print(pool_id)
+			#print(item)
+			#print(pool_id)
 			if int(item) == pool_id:
 				for word in general:
 					if word not in dic:
