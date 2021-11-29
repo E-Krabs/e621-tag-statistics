@@ -17,8 +17,8 @@ with open('{}JSON/tag-out-p.json'.format(directory), 'r') as f:
 	dic = {}
 	for key in data:
 		general = key['tags']['general']
-		pool = key['pools']
-		for item in pool:
+		pools = key['pools']
+		for item in pools:
 			print(item)
 			print(pool_id)
 			if int(item) == pool_id:
@@ -29,7 +29,7 @@ with open('{}JSON/tag-out-p.json'.format(directory), 'r') as f:
 						dic[word] += 1
 
 	word_counter = collections.Counter(dic)
-	with open('{}pool_{}_tags.txt'.format(directory, pool_id), 'w', encoding='utf-8') as o:
+	with open('{}pool_{}_tag_count.txt'.format(directory, pool_id), 'w', encoding='utf-8') as o:
 		for word, count in word_counter.most_common():
 			o.write('{0}: {1}\n'.format(word, count))
 		
@@ -37,6 +37,6 @@ with open('{}JSON/tag-out-p.json'.format(directory), 'r') as f:
 	lst = word_counter.most_common(display)
 	df = pd.DataFrame(lst, columns = ['Tag', 'Count'])
 	df.plot.bar(x='Tag',y='Count')
-	#plt.title('Stolas\'s Popular Tags')
+	#plt.title('Pool {}\'s Tags (20)')
 	#plt.show()
-	plt.savefig('{}pool_{}_tags_plot.png'.format(directory, pool_id), dpi=300, bbox_inches='tight') #transparent=True
+	plt.savefig('{}pool_{}_tag_plot.png'.format(directory, pool_id), dpi=300, bbox_inches='tight') #transparent=True
