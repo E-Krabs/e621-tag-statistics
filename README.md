@@ -9,7 +9,7 @@ This project fetches data from e621 provided via the <a href="https://e621.net/p
 
 <hr>
 <ul>
-  <li><code>fetchall.py</code> Dumps https://e621.net/posts.json. Dumps as much as it can (~2.5mil posts). Takes ~5.2 hours to complete.<br>
+  <li><code>updated_fetchall.py</code> Dumps https://e621.net/posts.json. Dumps as much as it can (~2.5mil posts). Takes ~5.2 hours to complete.<br>
   <li><code>tag_export.py</code> Exports tag data from the huge JSON file to a smaller file for easier interpretation. (less memory intensive)<br></li>
   <li><code>tag_count.py</code> Plots tag data. (Artist, General, Species, Characters, etc.)<br></li>
   <li><code>/Runners/tag_count_per_month.py</code> Compare any number of tags in 'general' and 'species', then plot.<br></li>
@@ -31,10 +31,10 @@ There's a lot of information that gets writen (~4.5GB). <code>json.load()</code>
 
 <h3><b>TODO:</b></h3>
 <ul>
-  <li>Optimize <code>fetchall.py</code>, so it won't take a day long to fetch. I think <code>json.dumps()</code> is the problem.</li>
-  <li>Find source of random 501s in <code>fetchall.py</code></li>
-  <li>Convert JSON to a sqlite db.</li>
-  <li>✓ <strike>Extract< <code>created_at</code> and <code>tags</code> to plot popularity of a tag over a time period.</strike></li>
+  <li>✓ <strike>Optimize <code>fetchall.py</code>, so it won't take a day long to fetch.</strike></li>
+  <p>Searching through our seen list of md5s was what was slowing down. Changed to a dict.</p>
+  <li>✓ <strike>Find source of random 501s in <code>fetchall.py</code></strike></li>
+  <li>✓ <strike>Extract <code>created_at</code> and <code>tags</code> to plot popularity of a tag over a time period.</strike></li>
   <li>✓ <strike>Create admin dashboard</strike></li>
   <li>✓ <strike>omit_empty - Omit entries with value of 0.</strike></li>
   <li>✓ <strike>omit_final - Omit the final entry (which might skew the line low when run during the begining of the month).</strike></li>
@@ -47,6 +47,7 @@ There's a lot of information that gets writen (~4.5GB). <code>json.load()</code>
       <li>✓ <strike>Species Explorer</strike></li>
       <li>✓ <strike>Jurassic Park Dino Dong</strike></li>
       <li>Finish Species Explorer</li>
+      <li>Recent spike in chastity devices... 😔</li>
       <li>✓ <strike>Count general tags in a comic pool</strike></li>
   <li>Upload copyright tags</li>
   </ul>
