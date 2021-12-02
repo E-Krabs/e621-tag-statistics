@@ -5,42 +5,46 @@ import json
 
 url = "https://e621.net/posts.json?limit=320"
 e621_agent = {
-   'User-Agent': '',
-   'login': '',
-   'api_key': ''
+   'User-Agent': 'TagData (by USERNAME)', # replace with your username
+   'login': 'EKrabs', # your username
+   'api_key': '' # your api key
 }
 
-login = ''
-api_key = ''
+login = 'EKrabs' # your username
+api_key = '7yqTWqrn1CLk4nG6q4J1W6s4' # your api key
 
-max_id = 3011070 #3011070 2992268 518808
-seen = []
-run = 0
+max_id = 3011070 #3051712 3011070 2992268 518808
+seen = {}
+run = 1
 directory = 'C:/Scripts/Python/[adjective][species]/'
 ''' When refreshing data, change 'w' to 'a' '''
-with open('{}e621-total-2021-11-05-a.json'.format(directory), 'w') as f:
+with open('{}JSON/e621-total-2021-11-05-a.json'.format(directory), 'a') as f:
 	''' When refreshing data, remove f.write('[') '''
-	f.write('[')
 	while max_id > 0:
+		while_start = time.time()
 		''' When refreshing data, change page=b{} to page=a{} '''
-		r = requests.get('{}&page=b{}'.format(url, max_id), headers=e621_agent, auth=HTTPBasicAuth(login, api_key))
-		if r.status_code != 200: #If not OK
+		r = requests.get('{}&page=a{}'.format(url, max_id), headers=e621_agent, auth=HTTPBasicAuth(login, api_key))
+		if r.status_code != 200:
 			print(r.status_code)
-      time.sleep(10) #Usually waiting a few seconds let the error pass
+			time.sleep(10)
 
 		data = r.json()
 		for item in data['posts']:
 			post_id = item['id']
-			if item['file']['md5'] in seen:
+			md5 = item['file']['md5']
+			''' Check if image was already indexed by comparing md5 '''
+			if md5 in seen:
 				continue
-			seen.append(item['file']['md5'])
+			seen[md5] = 1
 			print('#{} dumped {}'.format(run, post_id))
 			f.write(json.dumps(item) + '\n')
 			f.write(',')
 		''' When refreshing data, change -= 320 to += 320 '''
-		max_id -= 320
+		max_id += 320
 		time.sleep(2)
 		run += 1
+		now = time.time()
+		print('Loop {}: {}'.format(run-1, now-while_start))
 	f.write(']')
 
-print('fetched {} records, with {} requests'.format(len(seen), run))
+print('Fetched {} records, with {} requests'.format(len(seen), run))
