@@ -10,8 +10,8 @@ e621_agent = {
    'api_key': '' # your api key
 }
 
-login = 'EKrabs' # your username
-api_key = '7yqTWqrn1CLk4nG6q4J1W6s4' # your api key
+login = '' # your username
+api_key = '' # your api key
 
 max_id = 3011070 #3051712 3011070 2992268 518808
 seen = {}
