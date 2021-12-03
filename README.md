@@ -33,7 +33,7 @@ There's a lot of information that gets writen (~4.5GB). <code>json.load()</code>
 <ul>
   <li>✓ <strike>Optimize <code>fetchall.py</code>, so it won't take a day long to fetch.</strike></li>
   <p>Searching through our seen list of md5s was what was slowing down. Changed to a dict.</p>
-  <li>Optimize <code>fetchall.py</code> further.</li>
+  <li>Django app</li>
   <li>✓ <strike>Find source of random 501s in <code>fetchall.py</code></strike></li>
   <li>✓ <strike>Extract <code>created_at</code> and <code>tags</code> to plot popularity of a tag over a time period.</strike></li>
   <li>✓ <strike>Create admin dashboard</strike></li>
