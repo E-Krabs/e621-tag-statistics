@@ -48,7 +48,7 @@ There's a lot of information that gets writen (~4.5GB). <code>json.load()</code>
       <li>✓ <strike>Species Explorer</strike></li>
       <li>✓ <strike>Jurassic Park Dino Dong</strike></li>
       <li>Finish Species Explorer</li>
-      <li>Recent spike in chastity devices... 😔</li>
+      <li><a href="https://e-krabs.github.io/e621-json-dump/Report/4.htm">Report 4</a> needs to be updated.</li>
       <li>✓ <strike>Count general tags in a comic pool</strike></li>
   <li>Upload copyright tags</li>
   </ul>
