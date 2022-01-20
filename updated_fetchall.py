@@ -18,13 +18,13 @@ seen = {} #[]
 run = 1
 directory = 'C:/Scripts/Python/[adjective][species]/'
 ''' When refreshing data, change 'w' to 'a' '''
-with open('{}JSON/e621-total-2021-11-05-a.json'.format(directory), 'a') as f:
+with open('{}JSON/e621-total-2021-11-05-a.json'.format(directory), 'w') as f:
 	''' When refreshing data, replace f.write('[') to (',') '''
-	f.write(',')
+	f.write('[')
 	while True:
 		while_start = time.time()
 		''' When refreshing data, change page=b{} to page=a{} '''
-		r = requests.get('{}&page=a{}'.format(url, max_id), headers=e621_agent, auth=HTTPBasicAuth(login, api_key))
+		r = requests.get('{}&page=b{}'.format(url, max_id), headers=e621_agent, auth=HTTPBasicAuth(login, api_key))
 		if r.status_code != 200:
 			print(r.status_code)
 			time.sleep(10)
@@ -47,7 +47,7 @@ with open('{}JSON/e621-total-2021-11-05-a.json'.format(directory), 'a') as f:
 		if now-while_start < 3:
 			break
 		print('Loop {}: {}'.format(run, now-while_start))
-		max_id += 320
+		max_id -= 320
 		run += 1
 	f.write(']')
 
