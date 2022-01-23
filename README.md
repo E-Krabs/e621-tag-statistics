@@ -17,6 +17,18 @@ This project fetches data from e621 provided via the <a href="https://e621.net/p
   <li>Everything in <code>/Prefab/</code> are the scripts used for the reports. Results are in <code>/Reports/</code></li>
 </ul>
 
+<h3><b>How To Use?</b></h3>
+<ul>
+  <li>Cd to the repo: <code>cd C:/Users/User/Downloads/e621-json-dump-main</code></li>
+  <li>Install requirements: <code>pip install -r requirements.txt</code></li>
+  <li>In <code>fetchall.py</code>, <code>tag_export.py</code>, <code>tag_count.py</code>, and <code>refresh.py</code> change the directory var to the current directory</li>
+  <li>Generate data-set: <code>python3 fetchall.py</code> (This will take many hours. Ensure your pc meets memory requirements b4 starting.)</li>
+  <li>Generate <code>tag_out.json</code>: <code>python3 tag_out.py</code> (This will take awhile too...)</li>
+  <li>Generate report: <code>python3 tag_count.py</code></li>
+  <li>profit</li>
+</ul>
+  
+
 <h3><b>Requirements:</b></h3>
 <ul>
   <li>matplotlib</li>
