@@ -15,7 +15,7 @@ e621_agent = {
 login = 'EKrabs' # your username
 api_key = '7yqTWqrn1CLk4nG6q4J1W6s4' # your api key
 
-max_id = 3011070 #3138380 3011070 2992268 518808
+max_id = 3138380 #3138380 3011069 3053317 3011070 2992268 518808
 seen = {} #[]
 run = 1
 directory = 'C:/Scripts/Python/e621-json-dump-main/'
@@ -23,14 +23,14 @@ directory = 'C:/Scripts/Python/e621-json-dump-main/'
 day = datetime.now().day
 month = datetime.now().month
 year = datetime.now().year
-with open('{}JSON/e621-total-2021-11-05-a.json'.format(directory, year, month, day), 'a') as f:
+with open('{}JSON/e621-total-{}-{}-{}-a.json'.format(directory, year, month, day), 'w') as f:
 	''' When refreshing data, replace f.write('[') to (',') '''
-	f.write(',')
+	f.write('[')
 	while True:
 		while_start = time.time()
 		''' When refreshing data, change page=b{} to page=a{} '''
-		r = requests.get('{}&page=a{}'.format(url, max_id), headers=e621_agent, auth=HTTPBasicAuth(login, api_key))
-		#print('{}&page=a{}'.format(url, max_id))
+		r = requests.get('{}&page=b{}'.format(url, max_id), headers=e621_agent, auth=HTTPBasicAuth(login, api_key))
+		#print('{}&page=b{}'.format(url, max_id))
 		if r.status_code != 200:
 			print(r.status_code)
 			time.sleep(15)
@@ -56,7 +56,7 @@ with open('{}JSON/e621-total-2021-11-05-a.json'.format(directory, year, month, d
 		if now-while_start < 3:
 			break
 		print('Loop {}: {}'.format(run, now-while_start))
-		max_id += 320
+		max_id -= 320
 		run += 1
 	f.write(']')
 
