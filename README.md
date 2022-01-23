@@ -22,7 +22,6 @@ This project fetches data from e621 provided via the <a href="https://e621.net/p
   <li>matplotlib</li>
   <li>pandas</li>
   <li>requests</li>
-  <li>bigjson (if Memory < 64GB)</li>
 </ul>
 
 <h3><b>Memory:</b></h3>
@@ -31,6 +30,7 @@ There's a lot of information that gets writen (~4.5GB). <code>json.load()</code>
 
 <h3><b>TODO:</b></h3>
 <ul>
+  <li>Finish <a href="https://github.com/E-Krabs/rule34_json_dump">rule34 version of this.</a></li>
   <li>✓ <strike>Optimize <code>fetchall.py</code>, so it won't take a day long to fetch.</strike></li>
   <p>Searching through our seen list of md5s was what was slowing down. Changed to a dict.</p>
   <li>Django app</li>
@@ -50,6 +50,7 @@ There's a lot of information that gets writen (~4.5GB). <code>json.load()</code>
       <li>Finish Species Explorer</li>
       <li><a href="https://e-krabs.github.io/e621-json-dump/Report/4.htm">Report 4</a> needs to be updated.</li>
       <li>✓ <strike>Count general tags in a comic pool</strike></li>
+      <li>That new Sing movie was shit, lets see how it did on e621</li>
   <li>Upload copyright tags</li>
   </ul>
 </ul>
