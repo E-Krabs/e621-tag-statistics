@@ -5,7 +5,7 @@ Scripts to analyze the furry fandom through the content it produces and consumes
 Every image on e621 must be tagged with info describing what's in it (characters, artist, acts, etc.). Using this information provided via the <a href="https://e621.net/posts.json">e621 API</a>, we can plot the popularity of something in furry media.
 
 <h3><b>Fetching Data</b></h3>
-This project fetches data from e621 provided via the <a href="https://e621.net/posts.json">e621 API</a>. <code>fetchall.py</code> collects as much data as it can. This opperation can take a few hours, because API requests are limited to 2 per second. But we make requests only once per second to avoid a 503 (too many requests). Every request returns 320 posts. The script writes the returned results to a JSON file (~4.97GB) for later analysis.
+This project fetches data from e621 provided via the <a href="https://e621.net/posts.json">e621 API</a>. <code>fetchall.py</code> collects as much data as it can. This opperation can take a few hours, because API requests are limited to 2 per second. But we make requests only once per second to avoid a 503 (too many requests). Every request returns 320 posts. The script writes the returned results to a JSON file (~5.01GB) for later analysis.
 
 <hr>
 <ul>
@@ -38,10 +38,11 @@ This project fetches data from e621 provided via the <a href="https://e621.net/p
 
 <h3><b>Memory:</b></h3>
 <b>Required:</b> >= 32GB<br>
-There's a lot of information that gets writen (~4.5GB). <code>json.load()</code> loads the entire .json file into memory. Converting to a db would probally be much better. Or maybe ijson. I havn't given these a try yet...
+There's a lot of information that gets writen (~5.01GB). <code>json.load()</code> loads the entire .json file into memory. Converting to a db would probally be much better. Or maybe ijson. I havn't given these a try yet...
 
 <h3><b>TODO:</b></h3>
 <ul>
+  <li>✓ <strike>Reach 5GB of data!</strike></li>
   <li>Finish <a href="https://github.com/E-Krabs/rule34_json_dump">rule34 version of this.</a></li>
   <li>✓ <strike>Optimize <code>fetchall.py</code>, so it won't take a day long to fetch.</strike></li>
   <p>Searching through our seen list of md5s was what was slowing down. Changed to a dict.</p>
