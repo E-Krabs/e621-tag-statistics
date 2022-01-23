@@ -9,7 +9,7 @@ This project fetches data from e621 provided via the <a href="https://e621.net/p
 
 <hr>
 <ul>
-  <li><code>updated_fetchall.py</code> Dumps https://e621.net/posts.json. Dumps as much as it can (~2.5mil posts). Takes ~7.8-11.7 hours to complete.<br>
+  <li><code>fetchall.py</code> Dumps https://e621.net/posts.json. Dumps as much as it can (~2.5mil posts). Takes ~7.8-11.7 hours to complete.<br>
   <li><code>tag_export.py</code> Exports tag data from the huge JSON file to a smaller file for easier interpretation. (less memory intensive)<br></li>
   <li><code>tag_count.py</code> Plots tag data. (Artist, General, Species, Characters, etc.)<br></li>
   <li><code>/Runners/tag_count_per_month.py</code> Compare any number of tags in 'general' and 'species', then plot.<br></li>
