@@ -7,13 +7,13 @@ import os
 
 url = 'https://e621.net/posts.json?limit=320'
 e621_agent = {
-   'User-Agent': 'TagData (by EKrabs)',
-   'login': 'EKrabs',
-   'api_key': '7yqTWqrn1CLk4nG6q4J1W6s4'
+   'User-Agent': 'TagData (by username)',
+   'login': '', # your username
+   'api_key': '' # your api key
 }
 
-login = 'EKrabs' # your username
-api_key = '7yqTWqrn1CLk4nG6q4J1W6s4' # your api key
+login = '' # your username
+api_key = '' # your api key
 
 max_id = 3138380 #3138380 3011069 3053317 3011070 2992268 518808
 seen = {} #[]
