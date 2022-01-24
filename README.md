@@ -57,6 +57,7 @@ There's a lot of information that gets writen (~5.01GB). <code>json.load()</code
   <li>Convert data-set to a db</li>
   <li>More Reports:</li>
     <ul>
+      <li>Compare Zootopia's influence on furry population with [a][s]'s data.
       <li>✓ <strike>How many liters/year based on <code>cum</code>? (Cum Counter TM)</strike></li>
       <li>✓ <strike>Species Explorer</strike></li>
       <li>✓ <strike>Jurassic Park Dino Dong</strike></li>
