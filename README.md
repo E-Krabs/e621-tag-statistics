@@ -43,10 +43,10 @@ There's a lot of information that gets writen (~5.01GB). <code>json.load()</code
 <h3><b>TODO:</b></h3>
 <ul>
   <li>✓ <strike>Reach 5GB of data!</strike></li>
+  <li>Update all files to use the new sqlite database.</li>
   <li>Finish <a href="https://github.com/E-Krabs/rule34_json_dump">rule34 version of this.</a></li>
   <li>✓ <strike>Optimize <code>fetchall.py</code>, so it won't take a day long to fetch.</strike></li>
   <p>Searching through our seen list of md5s was what was slowing down. Changed to a dict.</p>
-  <li>Django app</li>
   <li>✓ <strike>Find source of random 501s in <code>fetchall.py</code></strike></li>
   <li>✓ <strike>Extract <code>created_at</code> and <code>tags</code> to plot popularity of a tag over a time period.</strike></li>
   <li>✓ <strike>Create admin dashboard</strike></li>
@@ -54,7 +54,7 @@ There's a lot of information that gets writen (~5.01GB). <code>json.load()</code
   <li>✓ <strike>omit_final - Omit the final entry (which might skew the line low when run during the begining of the month).</strike></li>
   <li>✓ <strike>More attrative plots.</strike></li>
   <li>Upload data-set</li>
-  <li>Convert data-set to a db</li>
+  <li>✓ <strike>Convert data-set to a db</strike></li>
   <li>More Reports:</li>
     <ul>
       <li>Compare Zootopia's influence on furry population with [a][s]'s data.
