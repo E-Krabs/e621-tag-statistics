@@ -34,6 +34,7 @@ This project fetches data from e621 provided via the <a href="https://e621.net/p
   <li>matplotlib</li>
   <li>pandas</li>
   <li>requests</li>
+  <li>sqlite3</li>
 </ul>
 
 <h3><b>Memory:</b></h3>
