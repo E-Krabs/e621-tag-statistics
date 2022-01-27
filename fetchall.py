@@ -7,15 +7,15 @@ import os
 
 url = 'https://e621.net/posts.json?limit=320'
 e621_agent = {
-   'User-Agent': 'TagData (by username)',
-   'login': '', # your username
-   'api_key': '' # your api key
+   'User-Agent': 'TagData (by )',
+   'login': '',
+   'api_key': ''
 }
 
 login = '' # your username
 api_key = '' # your api key
 
-max_id = 3138380 #3138380 3011069 3053317 3011070 2992268 518808
+max_id = 1000 #3138380 3011069 3053317 3011070 2992268 518808
 seen = {} #[]
 run = 1
 directory = 'C:/Scripts/Python/e621-json-dump-main/'
@@ -48,8 +48,8 @@ with open('{}JSON/e621-total-{}-{}-{}-a.json'.format(directory, year, month, day
 			print('{}'.format(post_id))
 			f.write(json.dumps(item)) #+ '\n'
 			''' Don't write a comma on the last post '''
-			if index != len(data['posts']) - 1:
-				f.write(',')
+			#if index != len(data['posts']) - 1:
+			f.write(',')
 		''' When refreshing data, change -= 320 to += 320 '''
 		time.sleep(2)
 		now = time.time()
