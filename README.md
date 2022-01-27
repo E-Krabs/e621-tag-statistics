@@ -10,8 +10,8 @@ This project fetches data from e621 provided via the <a href="https://e621.net/p
 <hr>
 <ul>
   <li><code>fetchall.py</code> Dumps https://e621.net/posts.json. Dumps as much as it can (~2.5mil posts). Takes ~7.8-11.7 hours to complete.<br>
-  <li><code>tag_export.py</code> Exports tag data from the huge JSON file to a smaller file for easier interpretation. (less memory intensive)<br></li>
-  <li><code>tag_count.py</code> Plots tag data. (Artist, General, Species, Characters, etc.)<br></li>
+  <li><code>json_to_sqlite.py</code> Converts our json file to a database for better access.</li>
+  <li><code>sqlite_count.py</code> Plots tag data. (Artist, General, Species, Characters, etc.)<br></li>
   <li><code>/Runners/tag_count_per_month.py</code> Compare any number of tags in 'general' and 'species', then plot.<br></li>
   <li><code>/Runners/comic_count.py</code> Count all general tags in a comic pool, then plot.<br></li>
   <li>Everything in <code>/Prefab/</code> are the scripts used for the reports. Results are in <code>/Reports/</code></li>
@@ -28,7 +28,6 @@ This project fetches data from e621 provided via the <a href="https://e621.net/p
   <li>profit</li>
 </ul>
   
-
 <h3><b>Requirements:</b></h3>
 <ul>
   <li>matplotlib</li>
@@ -39,7 +38,7 @@ This project fetches data from e621 provided via the <a href="https://e621.net/p
 
 <h3><b>Memory:</b></h3>
 <b>Required:</b> >= 32GB<br>
-There's a lot of information that gets writen (~5.01GB). <code>json.load()</code> loads the entire .json file into memory. Converting to a db would probally be much better. Or maybe ijson. I havn't given these a try yet...
+There's a lot of information that gets writen (~5.01GB). <code>json.load()</code> loads the entire .json file into memory. Once we convert the file to a database, it becomes less memory intensive. But the inital json file is still required
 
 <h3><b>TODO:</b></h3>
 <ul>
