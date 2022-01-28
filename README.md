@@ -38,17 +38,7 @@ This project fetches data from e621 provided via the <a href="https://e621.net/p
 
 <h3><b>Memory:</b></h3>
 <b>Required:</b> >= 32GB<br>
-There's a lot of information that gets writen (~5.01GB). <code>json.load()</code> loads the entire .json file into memory. Once we convert the file to a database, it becomes less memory intensive. But the inital json file is still required. Reading the database doesn't load it into memory. But that results in much slower preformance.<br>
-<ul>
-  <li><code>tag_count.py</code> / <code>sqlite_count.py</code></li>
-  <ul>
-    <li>Json (Load into Memory) ~ 1min</li>
-    <li>Sqlite (Read from Disk) ~14min</li>
-  </ul>
-</ul>
-<b>Sqlite:</b> Less memory intensive but at cost of time.<br>
-<b>Json:</b> Super fast but too memory intensive for some desktops.<br>
-For a server with 64GB of RAM, the sqlite database should be avoided.<br>
+There's a lot of information that gets writen (~5.01GB). <code>json.load()</code> loads the entire .json file into memory. Once we convert the file to a database, it becomes less memory intensive. But the inital json file is still required. Reading is sped up by selecting only required rows from the sqlite db and converting them to json objects. This is much faster.
 
 <h3><b>TODO:</b></h3>
 <ul>
