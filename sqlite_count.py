@@ -6,13 +6,6 @@ import pandas as pd
 import matplotlib.pyplot as plt
 plt.style.use(['dark_background'])
 
-def dict_factory(cursor, row):
-    d = {}
-    for idx, col in enumerate(cursor.description):
-        d[col[0]] = row[idx]
-    return d
-
-
 directory = 'C:/Scripts/Python/e621-json-dump-main'
 db = sqlite3.connect('{}/JSON/jsql.sqlite'.format(directory))
 cursor = db.cursor()
@@ -27,13 +20,9 @@ def tag_counter(tag_type):
 	tags = {}
 	for row in data:
 		for key in row:
-			print(key)
-			print(type(key))
 			key = json.loads(key)
-			print(key)
-			print(type(key))
+			#print(type(key))
 			general = key[tag_type]
-			#print(general)
 			for tag in general:
 				if tag not in tags:
 					tags[tag] = 1
