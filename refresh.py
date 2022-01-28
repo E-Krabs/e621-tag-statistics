@@ -17,20 +17,21 @@ e621_agent = {
 login = '' # your username
 api_key = '' # your api key
 
-max_id = 3143512 #3138380 3011070 2992268 518808
+max_id = 3138380 #3138380 3011070 2992268 518808
 seen = {} #[]
 run = 1
 directory = 'C:/Scripts/Python/e621-json-dump-main'
-''' When refreshing data, change 'w' to 'a' '''
+
 day = datetime.now().day
 month = datetime.now().month
 year = datetime.now().year
+'''
 with open('{}/JSON/e621-refresh.json'.format(directory, year, month, day), 'w') as f:
-	''' When refreshing data, replace f.write('[') to (',') '''
+
 	f.write('[')
 	while True:
 		while_start = time.time()
-		''' When refreshing data, change page=b{} to page=a{} '''
+
 		r = requests.get('{}&page=a{}'.format(url, max_id), headers=e621_agent, auth=HTTPBasicAuth(login, api_key))
 		if r.status_code != 200:
 			print(r.status_code)
@@ -41,17 +42,17 @@ with open('{}/JSON/e621-refresh.json'.format(directory, year, month, day), 'w') 
 		for index, item in enumerate(data['posts']):
 			post_id = item['id']
 			md5 = item['file']['md5']
-			''' Check if image was already indexed by comparing md5 '''
+
 			if md5 in seen:
 				continue
 			seen[md5] = 1
 			#seen.append(item['file']['md5'])
 			print('{}'.format(post_id))
 			f.write(json.dumps(item)) #+ '\n'
-			''' Don't write a comma on the last post '''
+
 			if index+1 != len(data['posts']):
 				f.write(',')
-		''' When refreshing data, change -= 320 to += 320 '''
+
 		time.sleep(2)
 		now = time.time()
 		if now-while_start < 3:
@@ -61,7 +62,7 @@ with open('{}/JSON/e621-refresh.json'.format(directory, year, month, day), 'w') 
 		run += 1
 	f.write(']')
 print('Fetched {} records, with {} requests'.format(len(seen), run-1))
-
+'''
 db = sqlite3.connect('{}/JSON/jsql.sqlite'.format(directory))
 with open('{}/JSON/e621-refresh.json'.format(directory), encoding='utf-8') as f:
 	json_data = json.loads(f.read())
@@ -80,7 +81,7 @@ with open('{}/JSON/e621-refresh.json'.format(directory), encoding='utf-8') as f:
 	values = [] 
 	for data in json_data:
 		for i in columns:
-			value.append(str(dict(data).get(i)))   
+			value.append(json.dumps(dict(data).get(i)))#IMPORTANT
 		values.append(list(value)) 
 		value.clear()
 		
@@ -91,8 +92,8 @@ with open('{}/JSON/e621-refresh.json'.format(directory), encoding='utf-8') as f:
 	c = db.cursor()   
 	c.execute(create_query)
 	c.executemany(insert_query , values)
-	db.commit()
-	c.execute('SELECT * FROM myTable ORDER BY CAST(id AS INT)')
+	#db.commit()
+	#c.execute('SELECT * FROM myTable ORDER BY CAST(id AS INT)')
 	values.clear()
 	db.commit()
 	c.close()

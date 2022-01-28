@@ -5,7 +5,7 @@ from datetime import datetime
 # https://www.codeproject.com/Tips/4067936/Load-JSON-File-with-Array-of-Objects-to-SQLite3-On
 directory = 'C:/Scripts/Python/e621-json-dump-main'
 db = sqlite3.connect('{}/JSON/jsql.sqlite'.format(directory))
-with open('{}/JSON/e621-total-2022-1-25-a.json'.format(directory), encoding='utf-8') as f:
+with open('{}/JSON/e621-total-2021-11-05-a.json'.format(directory), encoding='utf-8') as f:
 	json_data = json.loads(f.read())
 	
 #Aim of this block is to get the list of the columns in the JSON file.
@@ -22,7 +22,7 @@ with open('{}/JSON/e621-total-2022-1-25-a.json'.format(directory), encoding='utf
 	values = [] 
 	for data in json_data:
 		for i in columns:
-			value.append(str(dict(data).get(i)))   
+			value.append(json.dumps(dict(data).get(i)))#IMPORTANT 
 		values.append(list(value)) 
 		value.clear()
 		
