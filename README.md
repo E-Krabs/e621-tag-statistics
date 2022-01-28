@@ -43,7 +43,7 @@ There's a lot of information that gets writen (~5.01GB). <code>json.load()</code
 <h3><b>TODO:</b></h3>
 <ul>
   <li>✓ <strike>Reach 5GB of data!</strike></li>
-  <li>Update all files to use the new sqlite database.</li>
+  <li>✓ <strike>Update all files to use the new sqlite database.</strike></li>
   <li>Finish <a href="https://github.com/E-Krabs/rule34_json_dump">rule34 version of this.</a></li>
   <li>✓ <strike>Optimize <code>fetchall.py</code>, so it won't take a day long to fetch.</strike></li>
   <p>Searching through our seen list of md5s was what was slowing down. Changed to a dict.</p>
