@@ -25,7 +25,6 @@ directory = 'C:/Scripts/Python/e621-json-dump-main'
 day = datetime.now().day
 month = datetime.now().month
 year = datetime.now().year
-'''
 with open('{}/JSON/e621-refresh.json'.format(directory, year, month, day), 'w') as f:
 
 	f.write('[')
@@ -62,7 +61,7 @@ with open('{}/JSON/e621-refresh.json'.format(directory, year, month, day), 'w') 
 		run += 1
 	f.write(']')
 print('Fetched {} records, with {} requests'.format(len(seen), run-1))
-'''
+
 db = sqlite3.connect('{}/JSON/jsql.sqlite'.format(directory))
 with open('{}/JSON/e621-refresh.json'.format(directory), encoding='utf-8') as f:
 	json_data = json.loads(f.read())
@@ -98,5 +97,3 @@ with open('{}/JSON/e621-refresh.json'.format(directory), encoding='utf-8') as f:
 	db.commit()
 	c.close()
 print('Insert has completed at ' + str(datetime.now()))
-
-
