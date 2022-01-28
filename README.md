@@ -11,7 +11,7 @@ This project fetches data from e621 provided via the <a href="https://e621.net/p
 <ul>
   <li><code>fetchall.py</code> Dumps https://e621.net/posts.json. Dumps as much as it can (~2.5mil posts). Takes ~7.8-11.7 hours to complete.<br>
   <li><code>json_to_sqlite.py</code> Converts our json file to a database for better access.</li>
-  <li><code>sqlite_count.py</code> Plots tag data (Artist, General, Species, Characters, etc.). Can take > ~5mins.<br></li>
+  <li><code>sqlite_count.py</code> Plots tag data (Artist, General, Species, Characters, etc.).<br></li>
   <li><code>/Runners/tag_count_per_month.py</code> Compare any number of tags in 'general' and 'species', then plot.<br></li>
   <li><code>/Runners/comic_count.py</code> Count all general tags in a comic pool, then plot.<br></li>
   <li>Everything in <code>/Prefab/</code> are the scripts used for the reports. Results are in <code>/Reports/</code></li>
