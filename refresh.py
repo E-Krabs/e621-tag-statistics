@@ -91,7 +91,6 @@ with open('{}/JSON/e621-refresh.json'.format(directory), encoding='utf-8') as f:
 	c = db.cursor()   
 	c.execute(create_query)
 	c.executemany(insert_query , values)
-	#db.commit()
 	#c.execute('SELECT * FROM myTable ORDER BY CAST(id AS INT)')
 	values.clear()
 	db.commit()

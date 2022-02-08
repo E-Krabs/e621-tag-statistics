@@ -16,7 +16,7 @@ login = '' # your username
 api_key = '' # your api key
 
 max_id = 1000 #3138380 3011069 3053317 3011070 2992268 518808
-seen = {} #[]
+seen = {}
 run = 1
 directory = 'C:/Scripts/Python/e621-json-dump-main/'
 ''' When refreshing data, change 'w' to 'a' '''
@@ -55,9 +55,9 @@ with open('{}JSON/e621-total-{}-{}-{}-a.json'.format(directory, year, month, day
 		now = time.time()
 		if now-while_start < 3:
 			break
-		print('Loop {}: {}'.format(run, now-while_start))
+		print('loop {}: {}'.format(run, now-while_start))
 		max_id -= 320
 		run += 1
 	f.write(']')
 
-print('Fetched {} records, with {} requests'.format(len(seen), run-1))
+print('fetched {} records, with {} requests'.format(len(seen), run-1))
