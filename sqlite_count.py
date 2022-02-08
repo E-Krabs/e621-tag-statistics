@@ -30,7 +30,7 @@ def tag_counter(tag_type):
 	tag_count = collections.Counter(dic)
 	with open('{}/{}_tag_count.txt'.format(directory, tag_type), 'w', encoding='utf-8') as o:
 		for tag, count in tag_count.most_common():
-			o.write('{}: {} \n'.format(tag, count))
+			o.write('{}: {}\n'.format(tag, count))
 
 	lst = tag_count.most_common(20)
 	df = pd.DataFrame(lst, columns=[tag_type, 'Count'])
@@ -73,9 +73,9 @@ def ingest_log():
 	with open('{}/ingest_log.txt'.format(directory), 'w', encoding='utf-8') as o:
 		o.write(str(datetime.now()))
 
-#tag_counter('general')
-#tag_counter('species')
-#tag_counter('character')
-#tag_counter('artist')
-#rating_counter()
+tag_counter('general')
+tag_counter('species')
+tag_counter('character')
+tag_counter('artist')
+rating_counter()
 ingest_log()
