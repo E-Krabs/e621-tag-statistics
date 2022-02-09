@@ -11,9 +11,9 @@ plt.style.use(['dark_background'])
 colors = cycle(['blue', 'aqua', 'yellow', 'purple', 'pink', 'brown', 'grey', 'red', 'green', 'orange', 'white'])
 omit_final = True
 omit_empty = False
-directory = 'C:/Scripts/Python/e621-json-dump-main'
+cwd = os.getcwd()
 print('connecting to database')
-db = sqlite3.connect('{}/JSON/jsql.sqlite'.format(directory))
+db = sqlite3.connect('{}/JSON/jsql.sqlite'.format(cwd))
 cursor = db.cursor()
 fetch_query = "SELECT created_at, tags FROM myTable"
 cursor.execute(fetch_query)
@@ -79,7 +79,7 @@ def tag_count_per_month(*tag_name):
 	save_str = ''
 	for tag in tag_name:
 		save_str = save_str + tag + '_'
-	plt.savefig('{}/{}plot.png'.format(directory, save_str), dpi=300, bbox_inches='tight') #transparent=True
+	plt.savefig('{}/{}plot.png'.format(cwd, save_str), dpi=300, bbox_inches='tight') #transparent=True
 	plt.close() #clear plot vars
 
 dic = initalize_tag_count('general')

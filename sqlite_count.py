@@ -7,8 +7,8 @@ from tqdm import tqdm
 from datetime import datetime
 
 plt.style.use(['dark_background'])
-directory = 'C:/Scripts/Python/e621-json-dump-main'
-db = sqlite3.connect('{}/JSON/jsql.sqlite'.format(directory))
+cwd = os.getcwd()
+db = sqlite3.connect('{}/JSON/jsql.sqlite'.format(cwd))
 cursor = db.cursor()
 fetch_query = "SELECT file, tags, rating FROM myTable" #read them in order
 cursor.execute(fetch_query)
@@ -36,7 +36,7 @@ def tag_counter(tag_type):
 	df = pd.DataFrame(lst, columns=[tag_type, 'Count'])
 	df.plot.bar(x=tag_type, y='Count')
 	plt.ticklabel_format(axis='y', style='plain')
-	plt.savefig('{}/{}_tag_plot.png'.format(directory, tag_type), dpi=300, bbox_inches='tight')
+	plt.savefig('{}/{}_tag_plot.png'.format(cwd, tag_type), dpi=300, bbox_inches='tight')
 	plt.close() #clear plot vars
 
 def rating_counter():
@@ -66,11 +66,11 @@ def rating_counter():
 	plt.barh(y, x)
 	plt.title('Total Posts: {} ({}TB)'.format(len(data), size_tb))
 	plt.ticklabel_format(axis='x', style='plain')
-	plt.savefig('{}/rating_plot.png'.format(directory), dpi=300, bbox_inches='tight') #transparent=True
+	plt.savefig('{}/rating_plot.png'.format(cwd), dpi=300, bbox_inches='tight') #transparent=True
 	plt.close() #clear plot vars
 
 def ingest_log():
-	with open('{}/ingest_log.txt'.format(directory), 'w', encoding='utf-8') as o:
+	with open('{}/ingest_log.txt'.format(cwd), 'w', encoding='utf-8') as o:
 		o.write(str(datetime.now()))
 
 tag_counter('general')
