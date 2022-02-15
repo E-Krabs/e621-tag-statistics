@@ -28,10 +28,10 @@ This project fetches data from e621 provided via the <a href="https://e621.net/p
   
 <h3><b>Requirements:</b></h3>
 <ul>
-  <li>matplotlib</li>
-  <li>pandas</li>
-  <li>requests</li>
-  <li>sqlite3</li>
+  <li>matplotlib==3.5.1</li>
+  <li>pandas==1.3.5</li>
+  <li>requests==2.26.0</li>
+  <li>tqdm==4.62.3</li>
 </ul>
 
 <h3><b>TODO:</b></h3>
