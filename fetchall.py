@@ -1,9 +1,11 @@
+import os
 import requests
 from requests.auth import HTTPBasicAuth
 import time
 import json
 from datetime import datetime
-import os
+import sqlite3
+from tqdm import tqdm
 
 url = 'https://e621.net/posts.json?limit=320'
 e621_agent = {
@@ -15,49 +17,57 @@ e621_agent = {
 login = '' # your username
 api_key = '' # your api key
 
-max_id = 1000 #3138380 3011069 3053317 3011070 2992268 518808
+start_id = 3172536
 seen = {}
-run = 1
-directory = 'C:/Scripts/Python/e621-json-dump-main/'
-''' When refreshing data, change 'w' to 'a' '''
-day = datetime.now().day
-month = datetime.now().month
+cwd = os.getcwd()
 year = datetime.now().year
-with open('{}JSON/e621-total-{}-{}-{}-a.json'.format(directory, year, month, day), 'w') as f:
-	''' When refreshing data, replace f.write('[') to (',') '''
-	f.write('[')
+month = datetime.now().month
+day = datetime.now().day
+columns = ['id', 'created_at', 'updated_at', 'file', 'preview', 'sample', 
+	'score', 'tags', 'locked_tags', 'change_seq', 'flags', 'rating', 'fav_count'
+	'sources', 'pools', 'relationships', 'approver_id', 'uploader_id', 'description'
+	'comment_count', 'is_favorited', 'has_notes', 'duration']
+
+db = sqlite3.connect('{}/e621-total-{}-{}-{}.sqlite'.format(cwd, year, month, day))
+c = db.cursor() 
+c.execute('CREATE TABLE IF NOT EXISTS e621 ({})'.format(' text,'.join(columns)))
+
+def insert_sqlite(values):
+	insert_query = 'INSERT INTO e621 ({}) VALUES (?{})'.format(','.join(columns), ',?'*(len(columns)-1))
+	c.executemany(insert_query, values)
+
+with tqdm(total=start_id/320+1) as pbar:
 	while True:
-		while_start = time.time()
-		''' When refreshing data, change page=b{} to page=a{} '''
-		r = requests.get('{}&page=b{}'.format(url, max_id), headers=e621_agent, auth=HTTPBasicAuth(login, api_key))
-		#print('{}&page=b{}'.format(url, max_id))
+		r = requests.get('{}&page=b{}'.format(url, start_id), headers=e621_agent, auth=HTTPBasicAuth(login, api_key))
 		if r.status_code != 200:
 			print(r.status_code)
 			time.sleep(15)
 			continue
+		s = time.time()
 
 		data = r.json()
-		for index, item in enumerate(data['posts']):
-			post_id = item['id']
-			md5 = item['file']['md5']
-			''' Check if image was already indexed by comparing md5 '''
+		value = []
+		values = []
+		for post in data['posts']:
+			_id = post['id']
+			md5 = post['file']['md5']
 			if md5 in seen:
 				continue
 			seen[md5] = 1
-			#seen.append(item['file']['md5'])
-			print('{}'.format(post_id))
-			f.write(json.dumps(item)) #+ '\n'
-			''' Don't write a comma on the last post '''
-			#if index != len(data['posts']) - 1:
-			f.write(',')
-		''' When refreshing data, change -= 320 to += 320 '''
-		time.sleep(2)
-		now = time.time()
-		if now-while_start < 3:
-			break
-		print('loop {}: {}'.format(run, now-while_start))
-		max_id -= 320
-		run += 1
-	f.write(']')
+			#print(_id)
+			for item in columns:
+				value.append(json.dumps(dict(post).get(item)))
+			values.append(list(value))
+			value.clear()
 
-print('fetched {} records, with {} requests'.format(len(seen), run-1))
+		if len(values) == 0:
+			break
+
+		insert_sqlite(values)
+		time.sleep(2-(time.time()-s))
+		pbar.update(1)
+		start_id -= 320
+
+db.commit()
+c.close()
+print('fetched {} records, with {} requests'.format(len(seen), start_id/320+1))
