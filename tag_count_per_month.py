@@ -1,3 +1,4 @@
+import os
 import sqlite3
 import json
 import pandas as pd
@@ -8,7 +9,7 @@ from itertools import cycle
 from datetime import datetime
 
 plt.style.use(['dark_background'])
-colors = cycle(['blue', 'aqua', 'yellow', 'purple', 'pink', 'brown', 'grey', 'red', 'green', 'orange', 'white'])
+colors = cycle(['blue', 'aqua', 'yellow', 'red', 'pink', 'brown', 'grey', 'purple', 'green', 'orange', 'white'])
 omit_final = True
 omit_empty = False
 cwd = os.getcwd()
@@ -20,7 +21,7 @@ cursor.execute(fetch_query)
 data = cursor.fetchall()
 data = set(data)
 
-def initalize_tag_count(tag_type):
+def initalize_tag_count(tag_type): #adds a type of tag to memory as dict for counting
 	print(tag_type)
 	dic = {}
 	for row in tqdm(data): #for every row in data as tuple of created_at and tags from sqlite fetch
@@ -39,7 +40,7 @@ def initalize_tag_count(tag_type):
 				dic['{}'.format(created_at)][tag] += 1
 	return(dic)
 
-def tag_count_per_month(*tag_name):
+def tag_count_per_month(*tag_name): #i wrote this months ago, i forgot how it works
 	print(tag_name)
 	lst = []
 	for key in tqdm(dic):
@@ -69,7 +70,10 @@ def tag_count_per_month(*tag_name):
 		df = df[(dfe != 0).all(1)]
 
 	for tag in tag_name:
-		plt.plot(df['Date'], df['{}'.format(tag)], color=next(colors), linewidth='.5', label='{}'.format(tag))
+		if len(tag_name) > 6:
+			plt.plot(df['Date'], df['{}'.format(tag)], color=next(colors), linewidth='.5', label='{}'.format(tag))
+		else:
+			plt.plot(df['Date'], df['{}'.format(tag)], color=next(colors), linewidth='1', label='{}'.format(tag))
 	#plt.title('Tag Count Comparison')
 	plt.xticks(rotation=60)
 	if len(tag_name) >= 13:
@@ -83,11 +87,11 @@ def tag_count_per_month(*tag_name):
 	plt.close() #clear plot vars
 
 dic = initalize_tag_count('general')
-tag_count_per_month('girly','tomboy','crossdressing')
+tag_count_per_month('girly','tomboy','crossdressing', 'thigh_highs')
 #girly - feminine male
 #tomboy - masculine female
 #crossdressing - opposite gender clothing
-
+#thigh_highs - see relationship between femboys and thigh high socks
 '''
 dic = initalize_tag_count('species') #count all in species
 tag_count_per_month('canid', 'cetacean', 'felid', 'equid', 'cervid', 'lagomorph', 'marsupial', 'mustelid', 'primate', 'rodent', 'skunk', 'viverrid')
