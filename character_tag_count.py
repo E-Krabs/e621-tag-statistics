@@ -11,7 +11,7 @@ cwd = os.getcwd()
 print('connecting to database')
 db = sqlite3.connect('{}/JSON/jsql.sqlite'.format(directory))
 cursor = db.cursor()
-fetch_query = "SELECT tags FROM myTable"
+fetch_query = "SELECT tags FROM e621"
 cursor.execute(fetch_query)
 data = cursor.fetchall()
 data = set(data)
@@ -42,4 +42,4 @@ def character_tag_counter(tag_name):
 	plt.savefig('{}/{}_tag_plot.png'.format(cwd, tag_name), dpi=300, bbox_inches='tight') #transparent=True
 	plt.close() #clear plot vars
 
-character_tag_counter('loona_(helluva_boss)')
+character_tag_counter('') #character name
