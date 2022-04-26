@@ -16,7 +16,7 @@ cwd = os.getcwd()
 print('connecting to database')
 db = sqlite3.connect('{}/JSON/jsql.sqlite'.format(cwd))
 cursor = db.cursor()
-fetch_query = "SELECT created_at, tags FROM myTable"
+fetch_query = "SELECT created_at, tags FROM e621"
 cursor.execute(fetch_query)
 data = cursor.fetchall()
 data = set(data)
