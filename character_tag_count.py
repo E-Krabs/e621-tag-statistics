@@ -1,3 +1,4 @@
+import os
 import sqlite3
 import json
 import collections
@@ -5,11 +6,21 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from tqdm import tqdm
 from datetime import datetime
+from fnmatch import fnmatch
 
 plt.style.use(['dark_background'])
 cwd = os.getcwd()
-print('connecting to database')
-db = sqlite3.connect('{}/JSON/jsql.sqlite'.format(directory))
+
+for file in os.listdir('.'):
+	if fnmatch(file, '*.sqlite') == True:
+		sqlite_file = cwd + '\\' + file
+		break
+else:
+	print('Please generate the database.')
+	exit()
+	
+print('Connecting to {}'.format(file))
+db = sqlite3.connect(sqlite_file)
 cursor = db.cursor()
 fetch_query = "SELECT tags FROM e621"
 cursor.execute(fetch_query)
