@@ -8,7 +8,16 @@ from datetime import datetime
 
 plt.style.use(['dark_background'])
 cwd = os.getcwd()
-db = sqlite3.connect('{}/JSON/jsql.sqlite'.format(cwd))
+
+for file in os.listdir('.'):
+	if fnmatch(file, '*.sqlite') == True:
+		sqlite_file = cwd + '\\' + file
+		break
+else:
+	print('Please generate the database.')
+	exit()
+	
+print('Connecting to {}'.format(file))
 cursor = db.cursor()
 fetch_query = "SELECT file, tags, rating FROM e621" #read them in order
 cursor.execute(fetch_query)
@@ -69,8 +78,8 @@ def rating_counter():
 	plt.savefig('{}/rating_plot.png'.format(cwd), dpi=300, bbox_inches='tight') #transparent=True
 	plt.close() #clear plot vars
 
-def ingest_log():
-	with open('{}/ingest_log.txt'.format(cwd), 'w', encoding='utf-8') as o:
+def count_log():
+	with open('{}/count_log.txt'.format(cwd), 'w', encoding='utf-8') as o:
 		o.write(str(datetime.now()))
 
 tag_counter('general')
