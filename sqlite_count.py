@@ -10,7 +10,7 @@ plt.style.use(['dark_background'])
 cwd = os.getcwd()
 db = sqlite3.connect('{}/JSON/jsql.sqlite'.format(cwd))
 cursor = db.cursor()
-fetch_query = "SELECT file, tags, rating FROM myTable" #read them in order
+fetch_query = "SELECT file, tags, rating FROM e621" #read them in order
 cursor.execute(fetch_query)
 data = cursor.fetchall()
 data = set(data)
@@ -58,11 +58,11 @@ def rating_counter():
 	x.extend((safe, questionable, explicit))
 
 	print('size')
-	size_b = 0
+	size_byte = 0
 	for row in tqdm(data):
 		file = json.loads(row[0]) #load second obj in tuple as json (file)
-		size_b += file['size']
-	size_tb = size_b // 1000000000000 #1099511627776
+		size_byte += file['size']
+	size_tb = size_byte // 1099511627776
 	plt.barh(y, x)
 	plt.title('Total Posts: {} ({}TB)'.format(len(data), size_tb))
 	plt.ticklabel_format(axis='x', style='plain')
