@@ -36,6 +36,7 @@ c.execute('DELETE FROM e621')
 def insert_sqlite(values):
 	insert_query = 'INSERT INTO e621 ({}) VALUES (?{})'.format(','.join(columns), ',?'*(len(columns)-1))
 	c.executemany(insert_query, values)
+	db.commit() #commit every time instead of bulk incase of failure
 
 def get_start_id():
 	try:
@@ -51,7 +52,7 @@ def get_start_id():
 	return data['posts'][0]['id']
 
 start_id = get_start_id()
-print(start_id)
+
 with tqdm(total=start_id/320+1) as pbar:
 	while True:
 		try:
@@ -70,12 +71,10 @@ with tqdm(total=start_id/320+1) as pbar:
 		value = []
 		values = []
 		for post in data['posts']:
-			#_id = post['id']
 			md5 = post['file']['md5']
 			if md5 in seen:
 				continue
 			seen[md5] = 1
-			#print(_id)
 			for column in columns:
 				value.append(json.dumps(dict(post).get(column)))
 			values.append(list(value))
@@ -90,6 +89,5 @@ with tqdm(total=start_id/320+1) as pbar:
 		request_count += 1
 		start_id -= 320
 
-db.commit()
 c.close()
-print('\nfetched {} records, with {} requests'.format(len(seen), request_count+1))
+print('\nFetched {} records, with {} requests'.format(len(seen), request_count+1))
