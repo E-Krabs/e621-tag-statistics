@@ -2,7 +2,7 @@
 <h3><b>About</b></h3>
 <b>My first data-set thing, im gonna train something on the images...</b><br>
 Also see: <a href="https://github.com/E-Krabs/rule34_json_dump">rule34 version</a>.<br><br>
-Every image on e621 must be tagged with info describing what's in it (characters, artist, etc.). Using this information provided via the <a href="https://e621.net/posts.json">e621 API</a>, we can plot the popularity of something in furry media.
+Every image on e621 must be tagged with info describing what's in it (characters, artist, etc.). Using this information provided via the <a href="https://e621.net/posts.json">e621 API</a>, we can plot the popularity of something in a danbooru forum. I probally could have used a safer image board.
 
 <h3><b>Fetching Data</b></h3>
 This project fetches data from e621 provided via the <a href="https://e621.net/posts.json">e621 API</a>. <code>fetchall.py</code> collects about ~3mil posts. This opperation can take a few hours, because API requests are limited to 2 per second. But we make requests only once per second to avoid a 503 (too many requests). Every request returns 320 posts. The script writes the returned results to a SQLite database for later analysis.
@@ -21,7 +21,7 @@ This project fetches data from e621 provided via the <a href="https://e621.net/p
   <li>Cd to the repo: <code>cd C:/Users/User/Downloads/e621-json-dump-main</code></li>
   <li>Install requirements: <code>pip install -r requirements.txt</code></li>
   <li>Generate database: <code>python3 fetchall.py</code> (This will take many hours. Tqdm will let you know with a progress bar.)</li>
-  <li>Generate <code>report</code>: <code>python3 sqlite_count.py</code> (Should only take ~3min)</li>
+  <li>Generate report: <code>python3 sqlite_count.py</code> (Should only take ~3min)</li>
   <li>profit?</li>
 </ul>
   
