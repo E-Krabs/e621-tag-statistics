@@ -1,6 +1,6 @@
 # e621-json-dump
 <h3><b>About</b></h3>
-Scripts to analyze the furry fandom through the content it produces and consumes.<br>
+<b>My first data-set thing, im gonna train something on the images...</b><br>
 Also see: <a href="https://github.com/E-Krabs/rule34_json_dump">rule34 version</a>.<br><br>
 Every image on e621 must be tagged with info describing what's in it (characters, artist, etc.). Using this information provided via the <a href="https://e621.net/posts.json">e621 API</a>, we can plot the popularity of something in furry media.
 
