@@ -35,6 +35,7 @@ This project fetches data from e621 provided via the <a href="https://e621.net/p
 
 <h3><b>TODO:</b></h3>
 <ul>
+  <li>I want to download everything, every picture and train a recognition algoritmn, or a new img generator based off of these. Just need to buy a more hdds.</li>
   <li>✓ <strike>Reach 5GB of data.</strike></li>
   <li>✓ <strike>Update all files to use the new sqlite database.</strike></li>
   <li>Finish <a href="https://github.com/E-Krabs/rule34_json_dump">rule34 version of this.</a></li>
