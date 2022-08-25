@@ -1,4 +1,4 @@
-# e621-json-dump
+# e621 Tag Counter
 <h3><b>About</b></h3>
 <b>My first data-set thing, im gonna train something on the images...</b><br>
 Also see: <a href="https://github.com/E-Krabs/rule34_json_dump">rule34 version</a>.<br><br>
