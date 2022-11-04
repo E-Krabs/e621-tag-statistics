@@ -2,11 +2,11 @@
 <h3><b>About</b></h3>
 <b>My first data-set thing, im gonna train something on the images...</b><br>
 Also see: <a href="https://github.com/E-Krabs/rule34_json_dump">rule34 version</a>.<br><br>
-Every image on e621 must be tagged with info describing what's in it (characters, artist, etc.). Using this information provided via the <a href="https://e621.net/posts.json">e621 API</a>, we can plot the popularity of something in a danbooru forum. I probally could have used a safer image board.
+Every image on e621 must be tagged with info describing what's in it (characters, artist, etc.). Using this information provided via the <a href="https://e621.net/posts.json">e621 API</a>, we can plot the popularity of something.
 
 <h3><b>Fetching Data</b></h3>
-<p><b>NOTE:</b> Fetching is now obsolete as daily exports are now available...</p>
-This project fetches data from e621 provided via the <a href="https://e621.net/posts.json">e621 API</a>. <code>fetchall.py</code> collects about ~3mil posts. This opperation can take a few hours, because API requests are limited to 2 per second. But we make requests only once per second to avoid a 503 (too many requests). Every request returns 320 posts. The script writes the returned results to a SQLite database for later analysis.
+<b>NOTE:</b> Fetching data via the API is now obsolete as daily exports are now available...<br>
+Just download the csv file and place it in your default path folder.
 
 <hr>
 <ul>
