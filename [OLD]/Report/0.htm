@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>About</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../Static/main.css">
+<link rel="icon" type="image/x-icon" href="../Static/favicon-32x32.png">
+</head>
+<body>
+
+<div class="sidenav">
+	<a href="../index.htm">Dashboard</a>
+	<hr>
+	<a href="/e621-json-dump/Report/1.htm">Zootopia's Influence</a>
+	<a href="/e621-json-dump/Report/10.htm">Jurassic Park</a>
+	<a href="/e621-json-dump/Report/2.htm">Helluva Boss</a>
+	<div class="no">
+		<ul>
+		<li><a href="/e621-json-dump/Report/2.htm#stolas">Stolas' Tags</a></li>
+		<li><a href="/e621-json-dump/Report/2.htm#loona">Loona's Tags</a></li>
+		</ul>
+	</div>
+	<a href="/e621-json-dump/Report/5.htm">Hazbin Hotel</a>
+	<a href="/e621-json-dump/Report/3.htm">Popular Ponies</a>
+	<a href="/e621-json-dump/Report/4.htm">Popular Acts</a>
+	<a href="/e621-json-dump/Report/9.htm">Orientations and Groupings</a>
+	<a href="/e621-json-dump/Report/7.htm">Cum Counter™</a>
+	<a href="/e621-json-dump/Report/11.htm">Species Explorer</a>
+	<a href="/e621-json-dump/Report/8.htm">Total Tags</a>
+  	<hr>
+  	<a href="/e621-json-dump/Report/0.htm">About</a>
+</div>
+
+<div class="content">
+	<div class="header">
+		<h2 style="font-family: MatrixZone; color: white;">e621 Data</h2>
+	</div>
+		
+	<div class="col-container">
+	  <div class="col">
+	  	<center>
+	    <h2>About</h2>
+		<p>Scripts to analyze the furry fandom through the content it produces and consumes. Every image on e621 must be tagged with info describing what's in it (characters, artist, acts, etc.). Using this information provided via the <a href="https://e621.net/posts.json">e621 API</a>, we can plot the popularity of something in furry media.</p>
+
+		<h2>Fetching Data</h2>
+		<p>This project fetches data from e621 provided via the e621 API. <a href="https://github.com/E-Krabs/e621-json-dump/blob/main/fetchall.py"><code>fetchall.py</code></a> collects as much data as it can (~2.5mil posts). This opperation can take a few hours, because API requests are limited to 2 per second. But we make requests only once per second to avoid a 503 (too many requests). Every request returns 320 posts. The script writes the returned results to a JSON file (~4.5GB) for later analysis.</p>
+
+		<h2>How It Works</h2>
+		<p>Everything is written in Python. We fetch our information using the <a href="https://docs.python-requests.org/en/latest/">requests library</a> and save it as JSON. We can then use pandas to create a dataframe from the JSON objects. We then plot the dataframe with <a href="https://matplotlib.org">matplotlib</a>.
+	  </div>
+	</div>
+
+	<div class="footer">
+		<p>Expaned upon "<a href="https://explore621.net">explore621</a>" by <a href="https://adjectivespecies.com/">[adjective][species]</a> licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA</a>. Project source is licensed under the <a href="https://github.com/E-Krabs/e621-json-dump/blob/main/LICENSE">MIT License</a></p>
+		<p>This project is not affiliated with e621 or its creators. <a href="https://github.com/E-Krabs/e621-json-dump">View on Github</a> or <a href="https://github.com/adjspecies/explore621">View Original</a>.</p>
+	</div>
+</div>
+
+</body>
+</html>

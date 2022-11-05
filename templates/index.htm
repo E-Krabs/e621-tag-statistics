@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+	<title>Chart</title>
+</head>
+<body>
+	<div id="linechart_material" style="width:100%; max-width:600px; height:500px;"></div>
+
+	<script type="text/javascript">
+		google.charts.load('current', {'packages':['line']});
+		google.charts.setOnLoadCallback(drawChart);
+
+	function drawChart() {
+		var data = new google.visualization.DataTable();
+		var tags = {{ tags | safe}};
+		console.log(tags)
+
+		data.addColumn('string', 'Date');
+		for(tag in tags){
+		data.addColumn('number', tags[tag]);	
+		};
+		data.addRows({{ rows | safe }});
+
+		var options = {
+		chart: {
+			title: tags.join(', '),
+			subtitle: 'Tags Posted Monthly'
+		},
+		width: 900,
+		height: 500
+		};
+
+		var chart = new google.charts.Line(document.getElementById('linechart_material'));
+
+		chart.draw(data, google.charts.Line.convertOptions(options));
+	}
+	</script>
+</body>
+</html>
