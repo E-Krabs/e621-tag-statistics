@@ -1,8 +1,8 @@
-# e621 Tag Counter
+# e621 Tag Statistics
 <h3><b>About</b></h3>
 Statistics on tags on e621 via their daily dump csv. Plots data using matplotlib or Google Charts via a Flask app.<br>
-Also see: <a href="https://github.com/E-Krabs/rule34_json_dump">rule34 version</a>.<br><br>
-Every image on e621 must be tagged with info describing what's in it (characters, artist, etc.). Using this information provided via the <a href="https://e621.net/posts.json">e621 API</a>, we can plot the popularity of something.
+Every image on e621 must be tagged with info describing what's in it (characters, artist, etc.). Using this information provided via the <a href="https://e621.net/posts.json">e621 API</a>, we can plot the popularity of something.<br>
+<b>Also:</b> <a href="https://github.com/E-Krabs/rule34_json_dump">rule34 version</a>.
 <hr>
 
 <h3><b>File Description</b></h3>
@@ -24,7 +24,7 @@ Every image on e621 must be tagged with info describing what's in it (characters
   <li>Profit?</li>
 </ul>
   
-<h3><b>Requirements:</b></h3>
+<h3><b>Requirements</b></h3>
 <ul>
   <li>Python311</li>
   <li>matplotlib</li>
@@ -33,7 +33,7 @@ Every image on e621 must be tagged with info describing what's in it (characters
   <li>tqdm</li>
 </ul>
 
-<h3><b>TODO:</b></h3>
+<h3><b>TODO</b></h3>
 <ul>
   <li>☑ Google Charts via Flask app</li>
   <li>⬜ I want to download everything, every picture and train a recognition algoritmn, or a new img generator based off of these. Just need to buy a more hdds.</li>
