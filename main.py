@@ -102,7 +102,7 @@ def date_tag_count():
 		plt.legend()
 
 	save_str = '_'.join(tag_name)
-	plt.savefig(f'{save_str}_plot.png', dpi=300, bbox_inches='tight')
+	plt.savefig(f'{save_str}_plot.png', dpi=1200, bbox_inches='tight')
 	plt.close()
 
 
