@@ -72,10 +72,7 @@ def date_tag_count():
 			tr.append(d[f'{tag}'])
 		row_lst.append(tr)
 
-	column_row_lst = ['Date']
-	column_row_lst.extend(tag_name)
-
 	return row_lst, tag_name
 
 
-tag_name = ['breasts', 'nicole_watterson', 'gumball_watterson', 'richard_watterson', 'fox', 'human', 'dragon', 'domestic_dog', 'wolf', 'horse', 'domestic_cat']
+tag_name = ['loona_(helluva_boss)', 'blitzo_(helluva_boss)', 'moxxie_(helluva_boss)', 'millie_(helluva_boss)', 'stolas_(helluva_boss)', 'stella_(helluva_boss)', 'octavia_(helluva_boss)']

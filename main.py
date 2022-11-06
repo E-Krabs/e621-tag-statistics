@@ -11,8 +11,10 @@ csv.field_size_limit(922337203)
 # tag_cats = defaultdict(set)
 date_tags = {}
 omit_final = True
-omit_empty = False
-colours = cycle(['blue', 'aqua', 'yellow', 'red', 'pink', 'brown', 'grey', 'purple', 'green', 'orange', 'white'])
+omit_empty = True
+xticks_all = False
+#colours = cycle(['blue', 'aqua', 'yellow', 'red', 'pink', 'brown', 'grey', 'purple', 'green', 'orange', 'white'])
+colours = cycle(['blue', 'red', 'orange', 'green', 'purple', 'aqua', 'pink', 'yellow', 'green', 'grey', 'white'])
 
 
 '''
@@ -29,7 +31,8 @@ def tag_categorizer():
 
 
 def date_tag_frequency(interval):
-	with open('shortened_csv.csv', encoding='utf8') as post_f:
+	with open('posts-2022-11-01.csv', encoding='utf8') as post_f:
+		print(' '.join(tag_name))
 		post_reader = csv.reader(post_f, delimiter=',')
 		next(post_reader)
 
@@ -58,7 +61,7 @@ def date_tag_frequency(interval):
 def date_tag_count():
 	d = {}
 	lst = []
-	print(' '.join(tag_name))
+
 
 	for date in date_tags:
 		for tag in tag_name:
@@ -77,22 +80,22 @@ def date_tag_count():
 
 	df = pd.DataFrame(lst, columns=column_lst)
 	if omit_final:
-		df = df.iloc[1:, :]
+		df.drop(df.tail(1).index, inplace=True) # drop last n rows
 
-	df['Date'] = pd.to_datetime(df.date)
-	# df = df.sort_values(by=['Date'], ascending=True)
+	df['date'] = pd.to_datetime(df.date)
+	# df = df.sort_values(by=['date'], ascending=True)
 	if omit_empty:
-		dfe = df.loc[:, df.columns != 'Date']
-		df = df[(dfe != 0).all(1)]
+		dfe = df.loc[:, df.columns != 'date']
+		df = df.loc[(dfe != 0).any(axis=1)]  # no inplace ;(
 
 	for tag in tag_name:
-		if len(tag_name) > 6:
-			plt.plot(df['Date'], df[f'{tag}'], color=next(colours), linewidth='.5', label=f'{tag}')
-		else:
-			plt.plot(df['Date'], df[f'{tag}'], color=next(colours), linewidth='1', label=f'{tag}')
+		plt.plot(df['date'], df[f'{tag}'], color=next(colours), linewidth='1', label=f'{tag}')
 
-	plt.title(', '.join(tag_name))
-	plt.xticks(rotation=60)
+	# plt.title(', '.join(tag_name))
+	if xticks_all:
+		plt.xticks(df['date'], rotation=60, fontsize=.5)
+	else:
+		plt.xticks(rotation=60)
 	if len(tag_name) > 14:
 		plt.legend(bbox_to_anchor=(1.04, 1), borderaxespad=0)
 	else:
@@ -103,7 +106,7 @@ def date_tag_count():
 	plt.close()
 
 
-tag_name = ['breasts', 'pussy', 'anthro']
+tag_name = ['loona_(helluva_boss)', 'blitzo_(helluva_boss)', 'moxxie_(helluva_boss)', 'millie_(helluva_boss)', 'stolas_(helluva_boss)', 'stella_(helluva_boss)', 'octavia_(helluva_boss)']
 
 date_tag_frequency('monthly')
 date_tag_count()
