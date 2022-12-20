@@ -75,4 +75,4 @@ def date_tag_count():
 	return row_lst, tag_name
 
 
-tag_name = ['loona_(helluva_boss)', 'blitzo_(helluva_boss)', 'moxxie_(helluva_boss)', 'millie_(helluva_boss)', 'stolas_(helluva_boss)', 'stella_(helluva_boss)', 'octavia_(helluva_boss)']
+tag_name = ['', '']
