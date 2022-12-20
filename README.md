@@ -8,19 +8,29 @@ Every image on e621 must be tagged with info describing what's in it (characters
 <h3><b>File Description</b></h3>
 <ul>
   <li><code>main.py</code> The main statistics program. Chang list of tags to track in the script via <code>tag_name</code><br></li>
+  <li><code>downloader.py</code> Downloads <b>ALL</b> images with certain tags and tag exclusion; No multithreading (10K ~5hr).<br></li>
   <li><code>app.py</code> The Flask app Google Charts version of matplotlib. Does the same thing as <code>main.py</code><br></li>
   <li><code>app_init.py</code> Functions for the Flask app that does the counting. Change list of tags to track in the script via <code>tag_name</code><br></li>
   <li><code>templates/index.htm</code> The template page for the Flask app.<br></li>
-  <li>Everything in <code>/[OLD]/</code> are older versions of these programs using SQLite and JSON.</li>
+  <li>Everything in <code>/[OLD]/</code> Older versions of these scripts that used SQLite and JSON, before CSV dumps.</li>
 </ul>
 
 <h3><b>How To Use</b></h3>
 <ul>
   <li>Download the CSV dump from e621. Place it in this directory.</li>
-  <li>Install requirements via pip to a venv. <code>pip install -r requirements.txt</code></li>
-  <li>Change tags you want to track inside <code>main.py</code>'s <code>tag_name list</code>.</li>
   <li>Open a Command Prompt and cd to this directory.</li>
-  <li>Run <code>main.py</code> or <code>app.py</code>.</li>
+  <li>Install requirements via pip to a venv. <code>pip install -r requirements.txt</code></li>
+  <b>For main.py & app.py:</b>
+  <ul>
+    <li>Change tags you want to track via <code>tag_name</code>.</li>
+  </ul>
+  <b>For downloader.py</b>
+  <ul>
+    <li>Change directory to download to via <code>dld</code>.</li>
+    <li>Change tags to include via <code>include_tags</code>.</li>
+    <li>Change tags to exclude via <code>exclude_tags</code>.</li>
+  </ul>
+  <li>Run the script.</li>
   <li>Profit?</li>
 </ul>
   
@@ -35,9 +45,10 @@ Every image on e621 must be tagged with info describing what's in it (characters
 
 <h3><b>TODO</b></h3>
 <ul>
+  <li>☑ Downloader based on tag inclusion/exclusion (No multithreading to not overwhelm server).
   <li>☑ Google Charts via Flask app</li>
-  <li>⬜ I want to download everything, every picture and train a recognition algoritmn, or a new img generator based off of these. Just need to buy a more hdds.</li>
-  <li>☑ Reach 5GB of data.</li>
+  <li>☑ Use new CSV downloads.</li>
+  <li>☑ I want to download everything, every picture. <strike>and train a recognition algoritmn, or a new img generator based off of these.</strike></li>
   <li>☑ Update all files to use the new sqlite database.</li>
   <li>⬜ Finish <a href="https://github.com/E-Krabs/rule34_json_dump">rule34 version of this.</a></li>
   <li>☑ Optimize <code>fetchall.py</code>, so it won't take a day long to fetch.</li>
@@ -47,7 +58,7 @@ Every image on e621 must be tagged with info describing what's in it (characters
   <li>☑ omit_empty - Omit entries with value of 0.</li>
   <li>☑ omit_final - Omit the final entry (which might skew the line low when run during the begining of the month).</li>
   <li>☑ More attrative plots.</li>
-  <li>⬜ Upload database to home server.</li>
+  <li>☑ Upload database to home server.</li>
   <li>☑ Convert data-set to a db (json -> SQLite)..</li>
   <li>More Reports:</li>
     <ul>
@@ -56,9 +67,7 @@ Every image on e621 must be tagged with info describing what's in it (characters
       <li>☑ Species Explorer</li>
       <li>☑ Jurassic Park Dino Dong.</li>
       <li>⬜ Finish Species Explorer.</li>
-      <li>⬜ <a href="https://e-krabs.github.io/e621-json-dump/Report/4.htm">Report 4</a> needs to be updated.</li>
       <li>☑ Count general tags in a comic pool.</li>
-  <li>⬜ Upload copyright tags</li>
   </ul>
 </ul>
 <br>
