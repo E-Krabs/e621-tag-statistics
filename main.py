@@ -106,7 +106,7 @@ def date_tag_count():
 	plt.close()
 
 
-tag_name = ['loona_(helluva_boss)', 'blitzo_(helluva_boss)', 'moxxie_(helluva_boss)', 'millie_(helluva_boss)', 'stolas_(helluva_boss)', 'stella_(helluva_boss)', 'octavia_(helluva_boss)']
+tag_name = ['', '']
 
 date_tag_frequency('monthly')
 date_tag_count()
