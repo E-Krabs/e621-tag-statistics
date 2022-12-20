@@ -71,5 +71,5 @@ Every image on e621 must be tagged with info describing what's in it (characters
   </ul>
 </ul>
 <br>
-Expaned upon "<a href="https://explore621.net">explore621</a>"* by <a href="https://adjectivespecies.com/">[adjective][species]</a> licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA</a>. Project source is licensed under the <a href="https://github.com/E-Krabs/e621-json-dump/blob/main/LICENSE">MIT License</a><br>
+Expaned upon "<a href="https://explore621.net">explore621</a>"* by <a href="https://adjectivespecies.com/">[adjective][species]</a> licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA</a>. Project source is licensed under the <a href="https://github.com/E-Krabs/e621-tag-statistics/blob/main/LICENSE">MIT License</a><br>
 *Domain no longer active, it's now a minecraft server? I woulda bought it, but they got to it fast.
